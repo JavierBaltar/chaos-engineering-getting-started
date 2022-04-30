@@ -15,8 +15,12 @@ Chaos Engineering for Kubernetes introduction
  - [**Author**](#author)
 
 ## **Introduction**
+how to bring understanding to a system that is fundamentally not understandable
 
 ## **Chaos Engineering**
+
+Started back in the days in Netflix and amazon moving to datacenter to cloud public provider aws specifically (chaos monkey to simian army)
+
 
 ## **Chaos Engineering Principles**
 
