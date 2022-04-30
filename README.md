@@ -44,6 +44,16 @@ Later on, Simian Army (a Chaos Monkey evolution) included tools to test AWS infr
 | [Chaos Blade](https://chaosblade.io) | :heavy_check_mark: |
 
 ## **Litmus Chaos**
+Litmus is a Chaos Engineering Kubernetes native tool which provides for exhaustive experiments support for testing containers, pods, and nodes. It has good documentation for each of its experiment and also provides a GitHub repository of experiments, open for public contribution.
+
+Its main advantages are:
+- Components declared as Kubernetes Custom Resource Definitions (CDRs)
+- Plenty of out of the box experiments
+- Experiments SDK available in Go, Ansible and Python. 
+- Chaos Portal GUI 
+- Integration with CICD tools
+- Experiment metrics can be imported to Prometheus. 
+
 ### **Architecture**
 ### **Components**
 ### **Chaos Portal**
