@@ -12,6 +12,7 @@ Chaos Engineering for Kubernetes introduction
      - [**Components**](#components)
  - [**Demo**](#demo)
    - [**Source Code**](#source-code)
+   - [**Environment Setup**](#environment-setup)
  - 
  - [**References**](#referencess)
  - [**Author**](#author)
@@ -83,6 +84,9 @@ Source code can be cloned from [github](https://github.com/JavierBaltar/chaos-en
 git clone https://github.com/JavierBaltar/chaos-engineering-getting-started.git
 cd chaos-engineering-getting-started
 ```
+
+### **Environment Setup**
+
 
 ## **References**
 - [Litmus Chaos](https://litmuschaos.io/)
