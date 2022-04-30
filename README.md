@@ -17,7 +17,7 @@ Chaos Engineering for Kubernetes introduction
  - [**Author**](#author)
 
 ## **Introduction**
-how to bring understanding to a system that is fundamentally not understandable
+The main objective of this demo is discussing on how to bring understanding to a system that is fundamentally not understandable.
 
 ## **Chaos Engineering**
 
