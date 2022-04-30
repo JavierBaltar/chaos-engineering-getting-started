@@ -7,6 +7,8 @@ Chaos Engineering for Kubernetes introduction
  - [**Chaos Engineering Principles**](#chaos-engineering-principles)
  - [**Chaos Engineering Tools**](#chaos-engineering-tools)
  - [**Litmus Chaos**](#litmus-chaos)
+   - [**Architecture**](#litmus-architecture) 
+   - [**Components**](#litmus-components)
    - [**Chaos Portal**](#chaos-portal)
      - [**Components**](#components)
  - [**Demo**](#demo)
@@ -26,6 +28,8 @@ Chaos Engineering for Kubernetes introduction
 ## **Chaos Engineering Tools**
 
 ## **Litmus Chaos**
+### **Architecture**
+### **Components**
 ### **Chaos Portal**
 
 
