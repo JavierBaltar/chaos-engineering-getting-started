@@ -2,7 +2,6 @@
 Chaos Engineering for Kubernetes introduction
 
  - [**Introduction**](#Introduction)
- - [**Agenda**](#Agenda)
  - [**Chaos Engineering**](#chaos-engineering)
  - [**Chaos Engineering Principles**](#chaos-engineering-principles)
  - [**Chaos Engineering Tools**](#chaos-engineering-tools)
@@ -16,9 +15,6 @@ Chaos Engineering for Kubernetes introduction
  - [**Author**](#author)
 
 ## **Introduction**
-
-
-## **Agenda**
 
 ## **Chaos Engineering**
 
