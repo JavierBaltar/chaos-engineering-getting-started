@@ -56,6 +56,20 @@ Its main advantages are:
 
 ### **Architecture**
 ### **Components**
+- ChaosExperiment defines the experiment itself, required actions, and their schedule
+
+- ChaosEngine connects an application or Kubernetes node to the specific ChaosExperiment
+
+- ChaosResult stores the results of the experiment. Operator exports it as Prometheus metrics.
+
+#### Experiments Workflow
+
+Once a chaosengine object is created, Litmus creates the Chaos runner pod in the target namespace. This runner will orchestrate the experiment in the specified namespace and against the specified targets. 
+
+Target identification is something that makes Litmus different. To zero in on the target, the user has to insert a specific annotation on the deployment (more workloads are supported here: DaemonSet, StatefulSet and DeploymentConfig). Then, the user needs to modify the labels and fields in the chaosengine object (an example is shown below) so that Litmus can then locate all (or some) of the pods of the target deployment. 
+
+Once the Operator verifies that all the above prerequisites are met (correct labelling, annotation, Chaosexperiment object, permissions), it will create a pod of the experiment runner, which is responsible for the execution of the experiment. This workflow allows for limiting the blast radius of an experiment, as well as for concurrent experiment executions.
+
 ### **Chaos Portal**
 
 
