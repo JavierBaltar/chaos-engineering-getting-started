@@ -32,6 +32,8 @@ Chaos Engineering for Kubernetes introduction
 ## **Demo**
 
 ## **References**
+- [Litmus Chaos](https://litmuschaos.io/)
+- [Principles of Chaos Engineering](https://principlesofchaos.org/)
 
 ## **Author**
-
+Javier Baltar - [linkedIn](https://www.linkedin.com/in/javierbaltar/) | [github](https://github.com/JavierBaltar)
