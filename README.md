@@ -10,6 +10,8 @@ Chaos Engineering for Kubernetes introduction
    - [**Chaos Portal**](#chaos-portal)
      - [**Components**](#components)
  - [**Demo**](#demo)
+ - [**References**](#referencess)
+ - [**Author**](#author)
 
 ## **Introduction**
 
@@ -28,4 +30,8 @@ Chaos Engineering for Kubernetes introduction
 
 
 ## **Demo**
+
+## **References**
+
+## **Author**
 
