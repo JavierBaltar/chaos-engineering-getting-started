@@ -23,6 +23,8 @@ The main objective of this demo is discussing on how to bring understanding to a
 
 Started back in the days in Netflix and amazon moving to datacenter to cloud public provider aws specifically (chaos monkey to simian army)
 
+Chaos Engineering is the discipline of experimenting on a system in order to build confidence in the system’s capability to withstand turbulent conditions in production.
+
 
 ## **Chaos Engineering Principles**
 
