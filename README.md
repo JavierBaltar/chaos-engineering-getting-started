@@ -219,7 +219,7 @@ chaos-litmus-server-service        ClusterIP      10.100.249.254   <none>       
 
 ```
 
-Browse the url in your browser.
+Browse the external-ip:9091 in your browser.
 After login to the portal using default credentials (admin/litmus), you will be asked to change your password.
 
 ![10%](docs/images/chaos-center.png)
