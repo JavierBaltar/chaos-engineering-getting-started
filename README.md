@@ -87,8 +87,9 @@ cd chaos-engineering-getting-started
 ```
 
 ### **Environment Setup**
-The first step is installing Litmus Chaos. In this case, Litmus is deployed on an Amazon EKS cluster using the following tools: eksctl, helm and kubectl. 
-Create a new EKS cluster using eksctl:
+The first step is installing Litmus Chaos. In this case, Litmus is deployed on an Amazon EKS cluster using the following tools: eksctl, helm and kubectl.
+
+Once your AWS credentials profile is configure, create a new EKS cluster issuing the following eksctl command:
 ```bash
 eksctl create cluster -f infra/eks-cluster.yaml
 ```
