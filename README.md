@@ -176,6 +176,10 @@ Your release is named chaos and it's installed to namespace: litmus.
 ```
 ![10%](docs/images/chaos-center.png)
 
+![10%](docs/images/chaos-center-home.png)
+
+![10%](docs/images/chaos-agentse.png)
+
 ## **References**
 - [Litmus Chaos](https://litmuschaos.io/)
 - [Principles of Chaos Engineering](https://principlesofchaos.org/)
