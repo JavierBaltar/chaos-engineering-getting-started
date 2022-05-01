@@ -222,6 +222,27 @@ spec:
 ```
 
 
+Specific timestamp:
+´´´yaml
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChaosSchedule
+metadata:
+  name: schedule-nginx
+spec:
+  schedule:
+    once:
+      #should be modified according to current UTC Time
+      executionTime: "2020-05-12T05:47:00Z" 
+  engineTemplateSpec:
+      engineState: 'active'
+      appinfo:
+        appns: 'default'
+        applabel: 'app=nginx'
+        appkind: 'deployment'
+      annotationCheck: 'true'
+´´´
+
+
 ## **References**
 - [Litmus Chaos](https://litmuschaos.io/)
 - [Principles of Chaos Engineering](https://principlesofchaos.org/)
