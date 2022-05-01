@@ -95,75 +95,78 @@ eksctl create cluster -f infra/eks-cluster.yaml
 ```
 Output:
 ```bash
-➜  litmuseks eksctl create cluster -f eks-cluster.yaml
-2022-05-01 21:42:44 [ℹ]  eksctl version 0.95.0
-2022-05-01 21:42:44 [ℹ]  using region eu-west-1
-2022-05-01 21:42:45 [ℹ]  setting availability zones to [eu-west-1b eu-west-1c eu-west-1a]
-2022-05-01 21:42:45 [ℹ]  subnets for eu-west-1b - public:192.168.0.0/19 private:192.168.96.0/19
-2022-05-01 21:42:45 [ℹ]  subnets for eu-west-1c - public:192.168.32.0/19 private:192.168.128.0/19
-2022-05-01 21:42:45 [ℹ]  subnets for eu-west-1a - public:192.168.64.0/19 private:192.168.160.0/19
-2022-05-01 21:42:45 [ℹ]  nodegroup "litmus-demo-ng" will use "" [AmazonLinux2/1.21]
-2022-05-01 21:42:45 [ℹ]  using Kubernetes version 1.21
-2022-05-01 21:42:45 [ℹ]  creating EKS cluster "litmus-demo" in "eu-west-1" region with managed nodes
-2022-05-01 21:42:45 [ℹ]  1 nodegroup (litmus-demo-ng) was included (based on the include/exclude rules)
-2022-05-01 21:42:45 [ℹ]  will create a CloudFormation stack for cluster itself and 0 nodegroup stack(s)
-2022-05-01 21:42:45 [ℹ]  will create a CloudFormation stack for cluster itself and 1 managed nodegroup stack(s)
-2022-05-01 21:42:45 [ℹ]  if you encounter any issues, check CloudFormation console or try 'eksctl utils describe-stacks --region=eu-west-1 --cluster=litmus-demo'
-2022-05-01 21:42:45 [ℹ]  Kubernetes API endpoint access will use default of {publicAccess=true, privateAccess=false} for cluster "litmus-demo" in "eu-west-1"
-2022-05-01 21:42:45 [ℹ]  CloudWatch logging will not be enabled for cluster "litmus-demo" in "eu-west-1"
-2022-05-01 21:42:45 [ℹ]  you can enable it with 'eksctl utils update-cluster-logging --enable-types={SPECIFY-YOUR-LOG-TYPES-HERE (e.g. all)} --region=eu-west-1 --cluster=litmus-demo'
-2022-05-01 21:42:45 [ℹ]
+eksctl create cluster -f eks-cluster.yaml
+2022-05-02 00:33:36 [ℹ]  eksctl version 0.95.0
+2022-05-02 00:33:36 [ℹ]  using region eu-west-1
+2022-05-02 00:33:37 [ℹ]  setting availability zones to [eu-west-1a eu-west-1c eu-west-1b]
+2022-05-02 00:33:37 [ℹ]  subnets for eu-west-1a - public:192.168.0.0/19 private:192.168.96.0/19
+2022-05-02 00:33:37 [ℹ]  subnets for eu-west-1c - public:192.168.32.0/19 private:192.168.128.0/19
+2022-05-02 00:33:37 [ℹ]  subnets for eu-west-1b - public:192.168.64.0/19 private:192.168.160.0/19
+2022-05-02 00:33:37 [ℹ]  nodegroup "litmus-demo-ng" will use "" [AmazonLinux2/1.22]
+2022-05-02 00:33:37 [ℹ]  using Kubernetes version 1.22
+2022-05-02 00:33:37 [ℹ]  creating EKS cluster "litmus-demo" in "eu-west-1" region with managed nodes
+2022-05-02 00:33:37 [ℹ]  1 nodegroup (litmus-demo-ng) was included (based on the include/exclude rules)
+2022-05-02 00:33:37 [ℹ]  will create a CloudFormation stack for cluster itself and 0 nodegroup stack(s)
+2022-05-02 00:33:37 [ℹ]  will create a CloudFormation stack for cluster itself and 1 managed nodegroup stack(s)
+2022-05-02 00:33:37 [ℹ]  if you encounter any issues, check CloudFormation console or try 'eksctl utils describe-stacks --region=eu-west-1 --cluster=litmus-demo'
+2022-05-02 00:33:37 [ℹ]  Kubernetes API endpoint access will use default of {publicAccess=true, privateAccess=false} for cluster "litmus-demo" in "eu-west-1"
+2022-05-02 00:33:37 [ℹ]  CloudWatch logging will not be enabled for cluster "litmus-demo" in "eu-west-1"
+2022-05-02 00:33:37 [ℹ]  you can enable it with 'eksctl utils update-cluster-logging --enable-types={SPECIFY-YOUR-LOG-TYPES-HERE (e.g. all)} --region=eu-west-1 --cluster=litmus-demo'
+2022-05-02 00:33:37 [ℹ]
 2 sequential tasks: { create cluster control plane "litmus-demo",
     2 sequential sub-tasks: {
         wait for control plane to become ready,
         create managed nodegroup "litmus-demo-ng",
     }
 }
-2022-05-01 21:42:45 [ℹ]  building cluster stack "eksctl-litmus-demo-cluster"
-2022-05-01 21:42:45 [ℹ]  deploying stack "eksctl-litmus-demo-cluster"
-2022-05-01 21:43:15 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-01 21:43:45 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-01 21:44:46 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-01 21:45:46 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-01 21:46:46 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-01 21:47:46 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-01 21:48:47 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-01 21:49:47 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-01 21:50:47 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-01 21:51:47 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-01 21:52:48 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-01 21:53:48 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-01 21:55:50 [ℹ]  building managed nodegroup stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
-2022-05-01 21:55:51 [ℹ]  deploying stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
-2022-05-01 21:55:51 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
-2022-05-01 21:56:21 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
-2022-05-01 21:57:04 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
-2022-05-01 21:57:47 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
-2022-05-01 21:59:09 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
-2022-05-01 21:59:10 [ℹ]  waiting for the control plane availability...
-2022-05-01 21:59:10 [✔]  saved kubeconfig as "/Users/javier/.kube/config"
-2022-05-01 21:59:10 [ℹ]  no tasks
-2022-05-01 21:59:10 [✔]  all EKS cluster resources for "litmus-demo" have been created
-2022-05-01 21:59:10 [ℹ]  nodegroup "litmus-demo-ng" has 4 node(s)
-2022-05-01 21:59:10 [ℹ]  node "ip-192-168-54-154.eu-west-1.compute.internal" is ready
-2022-05-01 21:59:10 [ℹ]  node "ip-192-168-76-241.eu-west-1.compute.internal" is ready
-2022-05-01 21:59:10 [ℹ]  node "ip-192-168-87-91.eu-west-1.compute.internal" is ready
-2022-05-01 21:59:10 [ℹ]  node "ip-192-168-9-177.eu-west-1.compute.internal" is ready
-2022-05-01 21:59:10 [ℹ]  waiting for at least 2 node(s) to become ready in "litmus-demo-ng"
-2022-05-01 21:59:11 [ℹ]  nodegroup "litmus-demo-ng" has 4 node(s)
-2022-05-01 21:59:11 [ℹ]  node "ip-192-168-54-154.eu-west-1.compute.internal" is ready
-2022-05-01 21:59:11 [ℹ]  node "ip-192-168-76-241.eu-west-1.compute.internal" is ready
-2022-05-01 21:59:11 [ℹ]  node "ip-192-168-87-91.eu-west-1.compute.internal" is ready
-2022-05-01 21:59:11 [ℹ]  node "ip-192-168-9-177.eu-west-1.compute.internal" is ready
-2022-05-01 21:59:12 [ℹ]  kubectl command should work with "/Users/javier/.kube/config", try 'kubectl get nodes'
-2022-05-01 21:59:12 [✔]  EKS cluster "litmus-demo" in "eu-west-1" region is ready
-➜  litmuseks kubectl get nodes
-NAME                                           STATUS   ROLES    AGE   VERSION
-ip-192-168-54-154.eu-west-1.compute.internal   Ready    <none>   72s   v1.21.5-eks-9017834
-ip-192-168-76-241.eu-west-1.compute.internal   Ready    <none>   68s   v1.21.5-eks-9017834
-ip-192-168-87-91.eu-west-1.compute.internal    Ready    <none>   71s   v1.21.5-eks-9017834
-ip-192-168-9-177.eu-west-1.compute.internal    Ready    <none>   72s   v1.21.5-eks-9017834
+2022-05-02 00:33:37 [ℹ]  building cluster stack "eksctl-litmus-demo-cluster"
+2022-05-02 00:33:37 [ℹ]  deploying stack "eksctl-litmus-demo-cluster"
+2022-05-02 00:34:07 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-02 00:34:38 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-02 00:35:38 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-02 00:36:38 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-02 00:37:38 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-02 00:38:39 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-02 00:39:39 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-02 00:40:39 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-02 00:41:39 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-02 00:42:40 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-02 00:43:40 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-02 00:44:40 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-02 00:45:40 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-02 00:47:43 [ℹ]  building managed nodegroup stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
+2022-05-02 00:47:43 [ℹ]  deploying stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
+2022-05-02 00:47:43 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
+2022-05-02 00:48:14 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
+2022-05-02 00:48:55 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
+2022-05-02 00:49:39 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
+2022-05-02 00:51:31 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
 
+2022-05-02 00:52:39 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
+2022-05-02 00:52:39 [ℹ]  waiting for the control plane availability...
+2022-05-02 00:52:39 [✔]  saved kubeconfig as "/Users/javier/.kube/config"
+2022-05-02 00:52:39 [ℹ]  no tasks
+2022-05-02 00:52:39 [✔]  all EKS cluster resources for "litmus-demo" have been created
+2022-05-02 00:52:40 [ℹ]  nodegroup "litmus-demo-ng" has 4 node(s)
+2022-05-02 00:52:40 [ℹ]  node "ip-192-168-19-54.eu-west-1.compute.internal" is ready
+2022-05-02 00:52:40 [ℹ]  node "ip-192-168-42-161.eu-west-1.compute.internal" is ready
+2022-05-02 00:52:40 [ℹ]  node "ip-192-168-55-88.eu-west-1.compute.internal" is ready
+2022-05-02 00:52:40 [ℹ]  node "ip-192-168-66-101.eu-west-1.compute.internal" is ready
+2022-05-02 00:52:40 [ℹ]  waiting for at least 2 node(s) to become ready in "litmus-demo-ng"
+2022-05-02 00:52:40 [ℹ]  nodegroup "litmus-demo-ng" has 4 node(s)
+2022-05-02 00:52:40 [ℹ]  node "ip-192-168-19-54.eu-west-1.compute.internal" is ready
+2022-05-02 00:52:40 [ℹ]  node "ip-192-168-42-161.eu-west-1.compute.internal" is ready
+2022-05-02 00:52:40 [ℹ]  node "ip-192-168-55-88.eu-west-1.compute.internal" is ready
+2022-05-02 00:52:40 [ℹ]  node "ip-192-168-66-101.eu-west-1.compute.internal" is ready
+2022-05-02 00:52:41 [ℹ]  kubectl command should work with "/Users/javier/.kube/config", try 'kubectl get nodes'
+2022-05-02 00:52:41 [✔]  EKS cluster "litmus-demo" in "eu-west-1" region is ready
+
+kubectl get nodes
+NAME                                           STATUS   ROLES    AGE     VERSION
+ip-192-168-19-54.eu-west-1.compute.internal    Ready    <none>   3m51s   v1.22.6-eks-7d68063
+ip-192-168-42-161.eu-west-1.compute.internal   Ready    <none>   3m46s   v1.22.6-eks-7d68063
+ip-192-168-55-88.eu-west-1.compute.internal    Ready    <none>   3m50s   v1.22.6-eks-7d68063
+ip-192-168-66-101.eu-west-1.compute.internal   Ready    <none>   3m52s   v1.22.6-eks-7d68063
 
 ```
 
