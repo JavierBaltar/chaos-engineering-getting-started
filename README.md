@@ -200,6 +200,26 @@ Enabling Monitoring
 ## **Experiments**
 
 ### **Scheduling Experiments**
+Litmus experiments can be launched on a scheduled basis. ChaosSchedule object supports the schedule attribute 
+
+
+```yaml
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChaosSchedule
+metadata:
+  name: schedule-nginx
+spec:
+  schedule:
+    now: true
+  engineTemplateSpec:
+    engineState: 'active'
+    appinfo:
+      appns: 'default'
+      applabel: 'app=nginx'
+      appkind: 'deployment'
+    annotationCheck: 'true'
+
+```
 
 
 ## **References**
