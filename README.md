@@ -174,7 +174,7 @@ Thank you for installing litmus 😀
 Your release is named chaos and it's installed to namespace: litmus.
 
 ```
-
+![10%](docs/images/chaos-center.png)
 
 ## **References**
 - [Litmus Chaos](https://litmuschaos.io/)
