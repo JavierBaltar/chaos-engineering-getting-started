@@ -155,6 +155,12 @@ portal:
 EOF
 
 ```
+
+Create a Litmus namespace:
+```bash
+kubectl create namespace litmus
+```
+
 Install Litmus:
 
 ```bash
@@ -174,6 +180,12 @@ Thank you for installing litmus 😀
 Your release is named chaos and it's installed to namespace: litmus.
 
 ```
+
+List the services. The external endpoint might be displayed as pending for a minute. 
+
+Browse the url in your browser.
+After login to the portal using default credentials (admin/litmus), you will be asked to change your password.
+
 ![10%](docs/images/chaos-center.png)
 
 ![10%](docs/images/chaos-center-home.png)
@@ -182,6 +194,11 @@ Your release is named chaos and it's installed to namespace: litmus.
 
 
 Enabling Monitoring
+
+
+## **Experiments**
+
+### **Scheduling Experiments**
 
 
 ## **References**
