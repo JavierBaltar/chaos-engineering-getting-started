@@ -223,7 +223,9 @@ spec:
 
 
 Specific timestamp:
-´´´yaml
+
+```yaml
+
 apiVersion: litmuschaos.io/v1alpha1
 kind: ChaosSchedule
 metadata:
@@ -240,7 +242,7 @@ spec:
         applabel: 'app=nginx'
         appkind: 'deployment'
       annotationCheck: 'true'
-´´´
+```
 
 
 ## **References**
