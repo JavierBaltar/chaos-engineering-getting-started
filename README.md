@@ -234,6 +234,41 @@ Enabling Monitoring
 
 ## **Experiments**
 
+### **Pre-defined Workflow Template
+
+```bash
+kubectl get pods -n sock-shop
+NAME                               READY   STATUS    RESTARTS   AGE
+carts-7856799f8-55qtb              0/1     Running   0          3m17s
+carts-7856799f8-hlsgw              1/1     Running   0          3m17s
+carts-db-0                         1/1     Running   0          3m17s
+carts-db-1                         1/1     Running   0          2m27s
+catalogue-7c6967c66f-bczg9         1/1     Running   0          3m17s
+catalogue-7c6967c66f-d9cqv         1/1     Running   0          3m17s
+catalogue-db-0                     1/1     Running   0          3m17s
+catalogue-db-1                     1/1     Running   0          2m28s
+front-end-5d87c757c4-crbbz         1/1     Running   0          3m17s
+front-end-5d87c757c4-fvl8w         1/1     Running   0          3m17s
+git-app-checker-5bd479bbcb-48kfd   1/1     Running   0          3m16s
+orders-7454778b8c-9jr6r            1/1     Running   0          3m17s
+orders-7454778b8c-xwsjv            0/1     Running   0          3m17s
+orders-db-0                        1/1     Running   0          3m17s
+orders-db-1                        1/1     Running   0          2m31s
+payment-6ddc6b495f-9zr87           1/1     Running   0          3m17s
+payment-6ddc6b495f-f684t           1/1     Running   0          3m17s
+qps-test-5554f4cb8d-lsgpq          1/1     Running   0          3m16s
+queue-master-5b6b9988fb-kn44s      0/1     Running   0          3m17s
+queue-master-5b6b9988fb-szcw4      0/1     Running   0          3m17s
+rabbitmq-667d94879f-5t7xt          1/1     Running   0          3m17s
+rabbitmq-667d94879f-hjzxj          1/1     Running   0          3m16s
+shipping-6b7bcccb87-qvsbd          1/1     Running   0          3m16s
+shipping-6b7bcccb87-sg5w9          0/1     Running   0          3m16s
+user-5c855f4c56-fhn5b              0/1     Running   0          3m16s
+user-5c855f4c56-xt7dm              0/1     Running   0          3m16s
+user-db-0                          1/1     Running   0          3m17s
+user-db-1                          1/1     Running   0          2m7s
+```
+
 ### **Scheduling Experiments**
 Litmus experiments can be launched on a scheduled basis. ChaosSchedule object supports the schedule attribute 
 
