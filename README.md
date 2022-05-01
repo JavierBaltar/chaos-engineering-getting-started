@@ -206,7 +206,18 @@ Your release is named chaos and it's installed to namespace: litmus.
 
 ```
 
-List the services. The external endpoint might be displayed as pending for a minute. 
+List the services. The frontend service external endpoint might be displayed as pending for a minute. 
+
+```bash
+kubectl get svc -n litmus
+NAME                               TYPE           CLUSTER-IP       EXTERNAL-IP                                                               PORT(S)             AGE
+chaos-litmus-auth-server-service   ClusterIP      10.100.134.234   <none>                                                                    9003/TCP,3030/TCP   16s
+chaos-litmus-frontend-service      LoadBalancer   10.100.138.168   ad6c5181576aa45d6bd2e70c837c29bf-1312593859.eu-west-1.elb.amazonaws.com   9091:30356/TCP      16s
+chaos-litmus-headless-mongo        ClusterIP      10.100.34.134    <none>                                                                    27017/TCP           16s
+chaos-litmus-mongo                 ClusterIP      10.100.180.113   <none>                                                                    27017/TCP           16s
+chaos-litmus-server-service        ClusterIP      10.100.249.254   <none>                                                                    9002/TCP,8000/TCP   16s
+
+```
 
 Browse the url in your browser.
 After login to the portal using default credentials (admin/litmus), you will be asked to change your password.
