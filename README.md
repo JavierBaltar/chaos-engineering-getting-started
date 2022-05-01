@@ -180,6 +180,10 @@ Your release is named chaos and it's installed to namespace: litmus.
 
 ![10%](docs/images/chaos-agents.png)
 
+
+Enabling Monitoring
+
+
 ## **References**
 - [Litmus Chaos](https://litmuschaos.io/)
 - [Principles of Chaos Engineering](https://principlesofchaos.org/)
