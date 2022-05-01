@@ -142,6 +142,25 @@ ip-192-168-52-59.ec2.internal   Ready    <none>   2m52s   v1.21.5-eks-9017834
 ip-192-168-6-34.ec2.internal    Ready    <none>   3m5s    v1.21.5-eks-9017834
 ```
 
+Install Litmus using Helm chart.
+```bash
+helm repo add litmuschaos https://litmuschaos.github.io/litmus-helm/
+"litmuschaos" has been added to your repositories
+
+helm install chaos litmuschaos/litmus --namespace=litmus -f override-litmus.yaml
+NAME: chaos
+LAST DEPLOYED: Sun May  1 15:16:30 2022
+NAMESPACE: litmus
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+Thank you for installing litmus 😀
+
+Your release is named chaos and it's installed to namespace: litmus.
+
+```
+
 
 ## **References**
 - [Litmus Chaos](https://litmuschaos.io/)
