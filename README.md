@@ -142,12 +142,26 @@ ip-192-168-52-59.ec2.internal   Ready    <none>   2m52s   v1.21.5-eks-9017834
 ip-192-168-6-34.ec2.internal    Ready    <none>   3m5s    v1.21.5-eks-9017834
 ```
 
-Install Litmus using Helm chart.
+Before installing Litmus using Helm chart, override the default NodePort service to LoadBalancer. 
+```bash
+cat <<EOF > override-service-type-litmus.yaml
+portal:
+  server:
+    service:
+      type: ClusterIP
+  frontend:
+    service:
+      type: LoadBalancer
+EOF
+
+```
+Install Litmus:
+
 ```bash
 helm repo add litmuschaos https://litmuschaos.github.io/litmus-helm/
 "litmuschaos" has been added to your repositories
 
-helm install chaos litmuschaos/litmus --namespace=litmus -f override-litmus.yaml
+helm install chaos litmuschaos/litmus --namespace=litmus -f override-service-type-litmus.yaml
 NAME: chaos
 LAST DEPLOYED: Sun May  1 15:16:30 2022
 NAMESPACE: litmus
