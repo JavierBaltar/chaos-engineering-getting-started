@@ -14,7 +14,8 @@ Chaos Engineering for Kubernetes introduction
    - [**Source Code**](#source-code)
    - [**Environment Setup**](#environment-setup)
    - [**Experiments**](#experiments)
- - 
+     - [**Sock Shop Workflow Template**](#sock-shop-workflow-template)
+     - [**Container Kill**](#container-kill)
  - [**References**](#referencess)
  - [**Author**](#author)
 
@@ -237,7 +238,7 @@ Enabling Monitoring
 
 ## **Experiments**
 
-### **Pre-defined Workflow Template
+### **Sock Shop Workflow Template
 
 ```bash
 kubectl get pods -n sock-shop
@@ -272,7 +273,12 @@ user-db-0                          1/1     Running   0          3m17s
 user-db-1                          1/1     Running   0          2m7s
 ```
 
-### **Scheduling Experiments**
+
+
+### **Container Kill
+
+
+## **Scheduling Experiments**
 Litmus experiments can be launched on a scheduled basis. ChaosSchedule object supports the schedule attribute 
 
 
