@@ -240,6 +240,9 @@ Enabling Monitoring
 
 ### Sock Shop Workflow Template
 
+Browse the dashboard and select Schedule a Workflow. In the Workflows dashboard, select the Self-Agent and then click on Next. Select Create a Workflow from Pre-defined Templates and then select sock shop and then click on Next.
+
+
 ```bash
 kubectl get pods -n sock-shop
 NAME                               READY   STATUS    RESTARTS   AGE
