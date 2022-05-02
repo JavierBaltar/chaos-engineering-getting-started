@@ -8,7 +8,7 @@ Chaos Engineering for Kubernetes introduction
  - [**Litmus Chaos**](#litmus-chaos)
    - [**Architecture**](#litmus-architecture) 
    - [**Components**](#litmus-components)
-   - [**Chaos Portal**](#chaos-portal)
+   - [**Chaos Center**](#chaos-center)
      - [**Components**](#components)
  - [**Demo**](#demo)
    - [**Source Code**](#source-code)
@@ -73,7 +73,30 @@ Target identification is something that makes Litmus different. To zero in on th
 
 Once the Operator verifies that all the above prerequisites are met (correct labelling, annotation, Chaosexperiment object, permissions), it will create a pod of the experiment runner, which is responsible for the execution of the experiment. This workflow allows for limiting the blast radius of an experiment, as well as for concurrent experiment executions.
 
-### **Chaos Portal**
+### **Chaos Center**
+ChaosCenter provides a single pane of glass to configure, operate and monitor your experiments:
+- Workflow Creation
+From Templates, Custom Workflows from Scratch (using ChaosHubs), From pre-created YAMLs
+Chaos Experiments Sequence Control (Parallel as well as Sequential steps creation)
+Creation of either Singular or Cron Workflows as Schedules
+Attaching priority to Chaos Experiments based on your use cases
+
+- Users & Teams
+Creation of Users with Role Based Access Control
+Creating a Team of multiple Users
+Authenticating Users
+
+- Monitoring & Observability
+Connect a Data Source (from any Agent) and monitor workflows
+Visualize workflow run statistics and aggregated schedules
+Compare two or more Workflows
+Upload shared/downloadable dashboards available in the community
+Edit queries, Tune dashboards to create a custom one from scratch
+Monitor effect of chaos in real time with interleaved events and metrics from Prometheus Datasource
+- Workflow Management
+Rolling out automated changes using GitOps
+Allowing image addition from custom image server (both public and private)
+Measure and Analyse the Resilience Score of each workflow
 
 
 ## **Demo**
