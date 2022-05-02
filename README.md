@@ -305,9 +305,11 @@ user-db-1                          1/1     Running   0          2m7s
 
 
 ## **Scheduling Experiments**
+
+The ChaosSchedule is a user-facing chaos custom resource with namespaced scope and is used to inject chaos at a specific time or repeat it for a certain period. It schedules multiple instances of chaos by creating the chaosengine CR at the specified times.
 Litmus experiments can be launched on a scheduled basis. ChaosSchedule object supports the schedule attribute 
 
-
+Immediate:
 ```yaml
 apiVersion: litmuschaos.io/v1alpha1
 kind: ChaosSchedule
@@ -348,7 +350,84 @@ spec:
         appkind: 'deployment'
       annotationCheck: 'true'
 ```
+Time range:
+```yaml
 
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChaosSchedule
+metadata:
+  name: schedule-nginx
+spec:
+  schedule:
+    repeat:
+      timeRange:
+        #should be modified according to current UTC Time
+        startTime: "2020-05-12T05:47:00Z"   
+        endTime: "2020-09-13T02:58:00Z"   
+      properties:
+        #format should be like "10m" or "2h" accordingly for minutes and hours
+        minChaosInterval: "2m"   
+  engineTemplateSpec:
+    engineState: 'active'
+    appinfo:
+      appns: 'default'
+      applabel: 'app=nginx'
+      appkind: 'deployment'
+    annotationCheck: 'true'
+```
+
+Specific work hours:
+```yaml
+
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChaosSchedule
+metadata:
+  name: schedule-nginx
+spec:
+  schedule:
+    repeat:
+      properties:
+        #format should be like "10m" or "2h" accordingly for minutes and hours
+        minChaosInterval: "2m"   
+      workHours:
+        # format should be <starting-hour-number>-<ending-hour-number>(inclusive)
+        includedHours: 0-12
+  engineTemplateSpec:
+    engineState: 'active'
+    appinfo:
+      appns: 'default'
+      applabel: 'app=nginx'
+      appkind: 'deployment'
+    # It can be true/false
+    annotationCheck: 'true'
+```
+
+Chaos Schedules can be halted or resumed as per need issuing the steps below:
+
+Edit the ChaosSchedule custom resource:
+```bash
+kubectl edit chaosschedule schedule-nginx
+```
+
+
+Change the spec.scheduleState to halt
+```bash
+spec:
+  scheduleState: halt
+  ...
+```
+
+Similarly, edit the chaosschedule for resuming a halted schedule:
+```bash
+kubectl edit chaosschedule schedule-nginx
+```
+Change the spec.scheduleState to active
+
+```bash
+spec:
+  scheduleState: active
+  ...
+```
 
 ## **References**
 - [Litmus Chaos](https://litmuschaos.io/)
