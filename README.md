@@ -38,8 +38,21 @@ Later on, Simian Army (a Chaos Monkey evolution) included tools to test AWS infr
 
 ## **Chaos Engineering Principles**
 
+## **Benefits**
 
-## **Chaos Engineering Tools**
+Increases resiliency and reliability. Chaos testing enriches the organization’s intelligence about how software performs under stress and how to make it more resilient.
+
+Accelerates innovation. Intelligence from chaos testing funnels back to developers who can implement design changes that make software more durable and improve production quality.
+
+Advances collaboration. Developers aren’t the only group to see advantages. The insights chaos engineers glean from their experiments elevate the expertise of the technical group, leading to response times and better collaboration.
+
+Speeds incident response. By learning what failure scenarios are possible, these teams can speed troubleshooting, repairs, and incident response.
+
+Improves customer satisfaction. Increased resilience and faster response times mean less down-time. Greater innovation and collaboration from development and SRE teams means better software that meets new customer demands quickly with efficiency and high performance.
+
+Boosts business outcomes. Chaos testing can also extend an organization’s competitive advantage through faster time-to-value, saving time, money, and resources, and producing a better bottom line.
+
+## **Tools**
 
 | Tool | Open Source | Notes | 
 | ----------- | ----------- | ----------- | 
@@ -48,6 +61,9 @@ Later on, Simian Army (a Chaos Monkey evolution) included tools to test AWS infr
 | [Litmus Chaos](https://litmuschaos.io) | :heavy_check_mark: |
 | [Gremlin](https://www.gremlin.com) | :x: |
 | [Chaos Blade](https://chaosblade.io) | :heavy_check_mark: |
+
+
+
 
 ## **Litmus Chaos**
 Litmus is a Chaos Engineering Kubernetes native tool which provides for exhaustive experiments support for testing containers, pods, and nodes. It has good documentation for each of its experiment and also provides a GitHub repository of experiments, open for public contribution.
