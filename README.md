@@ -36,6 +36,16 @@ Chaos engineering started in 2010 during Netflix migration to cloud infrastructu
 
 Later on, Simian Army (a Chaos Monkey evolution) included tools to test AWS infrastrucure and services resiliency againsts failures such as disabling an AWS region, dropping an availability zone, simulating network delays and outages, etc. 
 
+Difference Between Chaos Engineering And Testing : 
+
+When we develop an application, we pass it through various tests that include Unit Tests, Integration Tests, and System Tests. 
+
+With Unit testing, we write a unit test case and check the expected behaviour of a component that is independent of all external components whereas Integration testing checks the interaction of individual and inter-dependant components. But even extensive testing does not provide us with a guaranteed error-free system because this testing examines only pre-defined and single scenarios. The results don't cover new information about the application, system behaviour, performance, and properties. This uncertainty increases with the use of microservice architectures, where the system grows with passing time. 
+
+Whereas in chaos, it generates a wide range and unpredictable outcome for experimenting on a distributed architecture to build confidence in the system’s capability and withstand turbulent conditions in production. Chaos Testing is a deliberate introduction of failure and faulty scenarios into our system to understand how the system will react and what could be its side effects. This type of testing is an effective method to prevent/minimize outages before they impact the system and ultimately the business.  
+
+
+
 
 ## **Chaos Engineering Principles**
 
@@ -52,6 +62,13 @@ Speeds incident response. By learning what failure scenarios are possible, these
 Improves customer satisfaction. Increased resilience and faster response times mean less down-time. Greater innovation and collaboration from development and SRE teams means better software that meets new customer demands quickly with efficiency and high performance.
 
 Boosts business outcomes. Chaos testing can also extend an organization’s competitive advantage through faster time-to-value, saving time, money, and resources, and producing a better bottom line.
+
+Insights received after running chaos testing can lead to a reduction in production incidents for the future. 
+Through Chaos Engineering, the team can verify the system's behaviour on failure so that accordingly it takes action. 
+Chaos Engineering helps in the testing response of the team to the incident. Also, helps in testing if the raised alert has been notified to the correct team. 
+On a high level, Chaos Engineering provides us an advantage by overall system availability. Chaos Experiments make the system more resilient to failures. 
+Production outages can lead to huge losses to companies depending on the usage of the system, therefore chaos engineering helps in the prevention of large losses in revenue. 
+It helps in improving the confidence and engagement of team members for carrying out disaster recovery methods and makes applications highly reliable. 
 
 ### **Challenges and Pitfalls**
 Unnecessary damage. The major concern with chaos testing is the potential for unnecessary damage. Chaos engineering can lead to a real-world loss that exceeds the allowances of justifiable testing. To limit the cost of uncovering application vulnerabilities, organizations should to avoid tests that overrun the designated blast radius. The goal is to control the blast radius so you can pinpoint the cause of failure without unnecessarily introducing new points of failure.
