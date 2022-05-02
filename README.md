@@ -6,7 +6,7 @@ Chaos Engineering for Kubernetes introduction
    - [**Principles**](#principles)
    - [**Use Cases**](#use-cases)
    - [**Benefits**](#benefitss)
-   - [**Challenges**](#challenges)
+   - [**Challenges-and-Pitfalls**](#challenges-and-pitfalls)
    - [**Tools**](#tools)
  - [**Litmus Chaos**](#litmus-chaos)
    - [**Architecture**](#litmus-architecture) 
@@ -38,7 +38,7 @@ Later on, Simian Army (a Chaos Monkey evolution) included tools to test AWS infr
 
 ## **Chaos Engineering Principles**
 
-## **Benefits**
+### **Benefits**
 
 Increases resiliency and reliability. Chaos testing enriches the organization’s intelligence about how software performs under stress and how to make it more resilient.
 
@@ -51,6 +51,13 @@ Speeds incident response. By learning what failure scenarios are possible, these
 Improves customer satisfaction. Increased resilience and faster response times mean less down-time. Greater innovation and collaboration from development and SRE teams means better software that meets new customer demands quickly with efficiency and high performance.
 
 Boosts business outcomes. Chaos testing can also extend an organization’s competitive advantage through faster time-to-value, saving time, money, and resources, and producing a better bottom line.
+
+### **Challenges and Pitfalls**
+Unnecessary damage. The major concern with chaos testing is the potential for unnecessary damage. Chaos engineering can lead to a real-world loss that exceeds the allowances of justifiable testing. To limit the cost of uncovering application vulnerabilities, organizations should to avoid tests that overrun the designated blast radius. The goal is to control the blast radius so you can pinpoint the cause of failure without unnecessarily introducing new points of failure.
+
+Lack of observability. Establishing that control can be easier said than done. Lack of end-to-end observability and monitoring into all systems a blast radius might affect is a common problem. Without comprehensive observability, it can be difficult to understand critical dependencies vs non-critical dependencies, or to have adequate context to understand the true business impact of a failure or degradation in order to prioritize fixes. Lack of visibility can also make it difficult for teams to determine the exact root cause of an issue, which can complicate remediation plans.
+
+Unclear starting system state. Another issue is having a clear picture of the starting state of the system before the test is run. Without this clarity, teams can have difficulty understanding the true effects of the test. This can diminish the effectiveness of chaos testing, and can put downstream systems at greater risk and make it harder to control the blast radius.
 
 ## **Tools**
 
