@@ -236,9 +236,9 @@ After login to the portal using default credentials (admin/litmus), you will be 
 Enabling Monitoring
 
 
-## **Experiments**
+## Experiments**
 
-### **Sock Shop Workflow Template
+### Sock Shop Workflow Template
 
 ```bash
 kubectl get pods -n sock-shop
@@ -275,7 +275,7 @@ user-db-1                          1/1     Running   0          2m7s
 
 
 
-### **Container Kill
+### Container Kill
 
 
 ## **Scheduling Experiments**
