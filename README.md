@@ -88,13 +88,13 @@ Monitor and record the results. Monitor the experiment to record any nuances in 
 
 ## **Tools**
 
-| Tool | Open Source | Language | Notes | 
-| ----------- | ----------- | ----------- | ----------- |
-| [Chaos Mesh](https://chaos-mesh.org) | :heavy_check_mark: | Go |
-| [Chaos Toolkit](https://chaostoolkit.org) | :x: | |
-| [Litmus Chaos](https://litmuschaos.io) | :heavy_check_mark: | |
-| [Gremlin](https://www.gremlin.com) | :x: | |
-| [Chaos Blade](https://chaosblade.io) | :heavy_check_mark: | |
+| Tool | Open Source | Language | Platforms | Notes | 
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| [Chaos Mesh](https://chaos-mesh.org) | :heavy_check_mark: | Go | Kubernetes | |
+| [Chaos Toolkit](https://chaostoolkit.org) | :x: | Python | | |
+| [Litmus Chaos](https://litmuschaos.io) | :heavy_check_mark: | TypeScript | | |
+| [Gremlin](https://www.gremlin.com) | :x: | | | |
+| [Chaos Blade](https://chaosblade.io) | :heavy_check_mark: | Go | Docker, Kubernetes, bare-metal, cloud providers | 
 
 
 
