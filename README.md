@@ -426,7 +426,121 @@ Click on View Logs & Results to check out the logs and chaos results for the dif
 ![10%](docs/images/chaos-results.png)
 
 ### Container Kill
+Now, let´s pick the container kill experiment to go through the details of running an experiment.
+First of all, I will deploy a sample application
 
+```bash
+kubectl apply -f src/nginx/nginx-deployment.yaml -n testing
+kubectl apply -f src/nginx/nginx-hpa.yaml -n testing
+```
+
+kubectl get pods -n testing
+NAME                          READY   STATUS    RESTARTS   AGE
+app-sample-55b8878cfb-75l2p   0/1     Running   0          14s
+app-sample-55b8878cfb-wbcmc   1/1     Running   0          36s
+
+
+kubectl expose deployment app-sample --type=LoadBalancer --port=80  -n testing
+service/app-sample exposed
+
+kubectl get svc -n testing
+NAME         TYPE           CLUSTER-IP      EXTERNAL-IP                                                              PORT(S)        AGE
+app-sample   LoadBalancer   10.100.221.67   a587b6b418a0a475d9860ed3f85f4b4e-800872529.eu-west-1.elb.amazonaws.com   80:31203/TCP   9s
+
+
+
+Install the experiments on the target testing namespace:
+kubectl apply -f https://hub.litmuschaos.io/api/chaos/2.8.0\?file\=charts/generic/experiments.yaml -n testing 
+
+
+kubectl get chaosexperiments -n testing
+NAME                      AGE
+container-kill            56s
+disk-fill                 57s
+docker-service-kill       53s
+k8-pod-delete             54s
+kubelet-service-kill      55s
+node-cpu-hog              56s
+node-drain                54s
+node-io-stress            54s
+node-memory-hog           53s
+node-poweroff             54s
+node-restart              55s
+node-taint                54s
+pod-autoscaler            56s
+pod-cpu-hog               57s
+pod-cpu-hog-exec          54s
+pod-delete                55s
+pod-dns-error             56s
+pod-dns-spoof             55s
+pod-io-stress             53s
+pod-memory-hog            56s
+pod-memory-hog-exec       55s
+pod-network-corruption    55s
+pod-network-duplication   54s
+pod-network-latency       57s
+pod-network-loss          56s
+pod-network-partition     56s
+
+
+In order to enable the experiment execution against the deployment, I need to add the annotation litmuschaos.io/chaos="true". 
+
+
+kubectl annotate deployment/app-sample litmuschaos.io/chaos="true" -n testing
+kubectl describe deployment/app-sample -n testing
+
+
+Name:                   app-sample
+Namespace:              testing
+CreationTimestamp:      Tue, 03 May 2022 15:35:52 +0200
+Labels:                 app=app-sample
+                        app.kubernetes.io/name=app-sample
+Annotations:            deployment.kubernetes.io/revision: 1
+                        kubectl.kubernetes.io/last-applied-configuration:
+                          {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app":"app-sample","app.kubernetes.io/name":"app-sample...
+                        litmuschaos.io/chaos: true
+Selector:               app.kubernetes.io/name=app-sample
+
+➜  javier kubectl apply -f kill-container-sa.yaml -n testing
+serviceaccount/container-kill-sa created
+role.rbac.authorization.k8s.io/container-kill-sa created
+rolebinding.rbac.authorization.k8s.io/container-kill-sa created
+➜  javier ls
+chaos-engine-kill-container.yaml infra                            kill-container-sa.yaml           nginx-deployment.yaml            nginx-hpa.yaml
+➜  javier kubectl apply -f chaos-engine-kill-container.yaml -n testing
+chaosengine.litmuschaos.io/app-sample-chaos created
+
+
+kubectl get pods -n testing
+NAME                             READY   STATUS    RESTARTS   AGE
+app-sample-55b8878cfb-75l2p      1/1     Running   0          21m
+app-sample-55b8878cfb-wbcmc      1/1     Running   0          21m
+app-sample-chaos-runner          1/1     Running   0          18s
+container-kill-cdykvi--1-w6qhv   1/1     Running   0          13s
+
+
+
+kubectl get pods -n testing
+NAME                             READY   STATUS    RESTARTS     AGE
+app-sample-55b8878cfb-75l2p      0/1     Running   1 (8s ago)   21m
+app-sample-55b8878cfb-wbcmc      1/1     Running   0            21m
+app-sample-chaos-runner          1/1     Running   0            46s
+container-kill-cdykvi--1-w6qhv   1/1     Running   0            41s
+container-kill-helper-cxfvxr     1/1     Running   0            19s
+
+
+# -----------------------------------------------------------
+
+Name:                   app-sample
+Namespace:              testing
+CreationTimestamp:      Mon, 29 Mar 2021 09:35:53 +0200
+Labels:                 app=app-sample
+                        app.kubernetes.io/name=app-sample
+Annotations:            deployment.kubernetes.io/revision: 1
+                        litmuschaos.io/chaos: true # <-- HABILITAMOS EXPERIMENTOS
+Selector:               app.kubernetes.io/name=app-sample
+Replicas:               2 desired | 2 updated | 2 total | 2 available | 0 unavailable
+StrategyType:           RollingUpdate
 
 ## **Scheduling Experiments**
 
