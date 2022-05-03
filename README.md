@@ -343,13 +343,23 @@ workflow-controller-856d568f68-cv7kn        1/1     Running   0          49s
 
 ### Sock Shop Workflow Template
 
-LitmusChaos comes with three pre-defined workflows, which deploy a bunch of microservices to play with. We will be running a podtato-head workflow, which creates a simple deployment and then injects the pod-delete experiment into it.
+LitmusChaos comes with three pre-defined workflows, which deploy a bunch of microservices to play with. We will be running a Sock Shop workflow, which installs a sock-shop application, generate loads, inject chaos on sock-shop, uninstall the application and revert the chaos. 
 
-Browse the dashboard and select Schedule a Workflow. In the Workflows dashboard, select the Self-Agent and then click on Next. Select Create a Workflow from Pre-defined Templates and then select sock shop and then click on Next.
+Browse the dashboard and select Schedule a Workflow.
 
 ![10%](docs/images/litmus-workflows.png)
+In the Workflows dashboard, select the Self-Agent and then click on Next.
 ![10%](docs/images/select-agent.png)
+
+Select Create a Workflow from Pre-defined Templates and then select sock shop and then click on Next.
 ![10%](docs/images/pre-defined-workflow-template.png)
+
+
+![10%](docs/images/tune-workflow.png)
+
+![10%](docs/images/workflow-running.png)
+
+![10%](docs/images/adjust-weights.png)
 
 ```bash
 kubectl get pods -n sock-shop
