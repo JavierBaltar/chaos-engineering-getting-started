@@ -501,13 +501,12 @@ Annotations:            deployment.kubernetes.io/revision: 1
                         litmuschaos.io/chaos: true
 Selector:               app.kubernetes.io/name=app-sample
 
-➜  javier kubectl apply -f kill-container-sa.yaml -n testing
+kubectl apply -f kill-container-sa.yaml -n testing
 serviceaccount/container-kill-sa created
 role.rbac.authorization.k8s.io/container-kill-sa created
 rolebinding.rbac.authorization.k8s.io/container-kill-sa created
-➜  javier ls
-chaos-engine-kill-container.yaml infra                            kill-container-sa.yaml           nginx-deployment.yaml            nginx-hpa.yaml
-➜  javier kubectl apply -f chaos-engine-kill-container.yaml -n testing
+
+kubectl apply -f chaos-engine-kill-container.yaml -n testing
 chaosengine.litmuschaos.io/app-sample-chaos created
 
 
@@ -529,18 +528,11 @@ container-kill-cdykvi--1-w6qhv   1/1     Running   0            41s
 container-kill-helper-cxfvxr     1/1     Running   0            19s
 
 
-# -----------------------------------------------------------
+The result of the experiment
+```bash
+kubectl describe chaosresult app-sample-chaos-container-kill -n testing
+```
 
-Name:                   app-sample
-Namespace:              testing
-CreationTimestamp:      Mon, 29 Mar 2021 09:35:53 +0200
-Labels:                 app=app-sample
-                        app.kubernetes.io/name=app-sample
-Annotations:            deployment.kubernetes.io/revision: 1
-                        litmuschaos.io/chaos: true # <-- HABILITAMOS EXPERIMENTOS
-Selector:               app.kubernetes.io/name=app-sample
-Replicas:               2 desired | 2 updated | 2 total | 2 available | 0 unavailable
-StrategyType:           RollingUpdate
 
 ## **Scheduling Experiments**
 
