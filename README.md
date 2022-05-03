@@ -347,6 +347,9 @@ LitmusChaos comes with three pre-defined workflows, which deploy a bunch of micr
 
 Browse the dashboard and select Schedule a Workflow. In the Workflows dashboard, select the Self-Agent and then click on Next. Select Create a Workflow from Pre-defined Templates and then select sock shop and then click on Next.
 
+![10%](docs/images/litmus-workflows.png)
+![10%](docs/images/select-agent.png)
+![10%](docs/images/pre-defined-workflow-template.png)
 
 ```bash
 kubectl get pods -n sock-shop
