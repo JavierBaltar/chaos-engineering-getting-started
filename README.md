@@ -713,6 +713,29 @@ spec:
   ...
 ```
 
+
+Finally, destroy the EKS cluster. 
+```bash
+eksctl delete cluster --name litmus-demo
+2022-05-03 17:28:57 [ℹ]  eksctl version 0.95.0
+2022-05-03 17:28:57 [ℹ]  using region eu-west-1
+2022-05-03 17:29:02 [ℹ]  deleting EKS cluster "litmus-demo"
+2022-05-03 17:29:03 [ℹ]  will drain 0 unmanaged nodegroup(s) in cluster "litmus-demo"
+2022-05-03 17:29:03 [ℹ]  deleted 0 Fargate profile(s)
+2022-05-03 17:29:04 [✔]  kubeconfig has been updated
+2022-05-03 17:29:04 [ℹ]  cleaning up AWS load balancers created by Kubernetes objects of Kind Service or Ingress
+2022-05-03 17:32:34 [ℹ]
+2 sequential tasks: { delete nodegroup "litmus-demo-ng", delete cluster control plane "litmus-demo" [async]
+}
+2022-05-03 17:32:34 [ℹ]  will delete stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
+2022-05-03 17:32:34 [ℹ]  waiting for stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng" to get deleted
+2022-05-03 17:32:34 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
+2022-05-03 17:42:39 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
+2022-05-03 17:42:39 [ℹ]  will delete stack "eksctl-litmus-demo-cluster"
+2022-05-03 17:42:39 [✔]  all cluster resources were deleted
+```
+
+
 ## **References**
 - [Litmus Chaos](https://litmuschaos.io/)
 - [Principles of Chaos Engineering](https://principlesofchaos.org/)
