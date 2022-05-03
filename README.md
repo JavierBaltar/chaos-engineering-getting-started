@@ -370,8 +370,6 @@ Go back to Chaos Center and browse the Analytics tab.
 
 ## Experiments
 
-
-
 ### Sock Shop Workflow Template
 
 LitmusChaos comes with three pre-defined workflows, which deploy a bunch of microservices to play with. We will be running a Sock Shop workflow, which installs a sock-shop application, generate loads, inject chaos on sock-shop, uninstall the application and revert the chaos. 
@@ -516,6 +514,7 @@ Annotations:            deployment.kubernetes.io/revision: 1
 Selector:               app.kubernetes.io/name=app-sample
 
 kubectl apply -f kill-container-sa.yaml -n testing
+
 serviceaccount/container-kill-sa created
 role.rbac.authorization.k8s.io/container-kill-sa created
 rolebinding.rbac.authorization.k8s.io/container-kill-sa created
@@ -599,6 +598,80 @@ container-kill-helper-cxfvxr     1/1     Running   0            19s
 The result of the experiment
 ```bash
 kubectl describe chaosresult app-sample-chaos-container-kill -n testing
+
+Name:         app-sample-chaos-container-kill
+Namespace:    testing
+Labels:       app.kubernetes.io/component=experiment-job
+              app.kubernetes.io/part-of=litmus
+              app.kubernetes.io/runtime-api-usage=true
+              app.kubernetes.io/version=2.8.0
+              chaosUID=af0b4eb5-9d0d-4899-9021-161beb0a258a
+              controller-uid=7ab3c405-995c-493d-b05a-c59595dc8ac3
+              job-name=container-kill-rvkc87
+              name=container-kill
+Annotations:  <none>
+API Version:  litmuschaos.io/v1alpha1
+Kind:         ChaosResult
+Metadata:
+  Creation Timestamp:  2022-05-03T16:56:35Z
+  Generation:          2
+  Managed Fields:
+    API Version:  litmuschaos.io/v1alpha1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .:
+          f:app.kubernetes.io/component:
+          f:app.kubernetes.io/part-of:
+          f:app.kubernetes.io/runtime-api-usage:
+          f:app.kubernetes.io/version:
+          f:chaosUID:
+          f:controller-uid:
+          f:job-name:
+          f:name:
+      f:spec:
+        .:
+        f:engine:
+        f:experiment:
+      f:status:
+        .:
+        f:experimentStatus:
+        f:history:
+        f:probeStatus:
+    Manager:         experiments
+    Operation:       Update
+    Time:            2022-05-03T16:56:35Z
+  Resource Version:  13579
+  UID:               c85aa975-97cf-499a-bfaf-937e4cb8ac72
+Spec:
+  Engine:      app-sample-chaos
+  Experiment:  container-kill
+Status:
+  Experiment Status:
+    Fail Step:                 N/A
+    Phase:                     Completed
+    Probe Success Percentage:  100
+    Verdict:                   Pass
+  History:
+    Failed Runs:   0
+    Passed Runs:   1
+    Stopped Runs:  0
+    Targets:
+      Chaos Status:  targeted
+      Kind:          pod
+      Name:          app-sample-55b8878cfb-pss82
+  Probe Status:
+    Name:  check-frontend-access-url
+    Status:
+      Continuous:  Passed 👍
+    Type:          httpProbe
+Events:
+  Type    Reason   Age   From                            Message
+  ----    ------   ----  ----                            -------
+  Normal  Awaited  84s   container-kill-rvkc87--1-m8n7b  experiment: container-kill, Result: Awaited
+  Normal  Pass     3s    container-kill-rvkc87--1-m8n7b  experiment: container-kill, Result: Pass
+
 ```
 
 
