@@ -445,13 +445,14 @@ First of all, I will deploy a sample application
 kubectl apply -f src/nginx/nginx-deployment.yaml -n testing
 kubectl apply -f src/nginx/nginx-hpa.yaml -n testing
 ```
-
+```bash
 kubectl get pods -n testing
 NAME                          READY   STATUS    RESTARTS   AGE
 app-sample-55b8878cfb-75l2p   0/1     Running   0          14s
 app-sample-55b8878cfb-wbcmc   1/1     Running   0          36s
+```
 
-
+```bash
 kubectl expose deployment app-sample --type=LoadBalancer --port=80  -n testing
 service/app-sample exposed
 
@@ -459,9 +460,12 @@ kubectl get svc -n testing
 NAME         TYPE           CLUSTER-IP      EXTERNAL-IP                                                              PORT(S)        AGE
 app-sample   LoadBalancer   10.100.221.67   a587b6b418a0a475d9860ed3f85f4b4e-800872529.eu-west-1.elb.amazonaws.com   80:31203/TCP   9s
 
+```
 
 
 Install the experiments on the target testing namespace:
+
+```bash
 kubectl apply -f https://hub.litmuschaos.io/api/chaos/2.8.0\?file\=charts/generic/experiments.yaml -n testing 
 
 
@@ -494,10 +498,11 @@ pod-network-latency       57s
 pod-network-loss          56s
 pod-network-partition     56s
 
+```
 
 In order to enable the experiment execution against the deployment, I need to add the annotation litmuschaos.io/chaos="true". 
 
-
+```bash
 kubectl annotate deployment/app-sample litmuschaos.io/chaos="true" -n testing
 kubectl describe deployment/app-sample -n testing
 
@@ -513,16 +518,27 @@ Annotations:            deployment.kubernetes.io/revision: 1
                         litmuschaos.io/chaos: true
 Selector:               app.kubernetes.io/name=app-sample
 
+```
+
+Apply the SA:
+
+```bash
+
 kubectl apply -f kill-container-sa.yaml -n testing
 
 serviceaccount/container-kill-sa created
 role.rbac.authorization.k8s.io/container-kill-sa created
 rolebinding.rbac.authorization.k8s.io/container-kill-sa created
 
+```
+
+Launch the experiment:
+```bash
+
 kubectl apply -f chaos-engine-kill-container.yaml -n testing
 chaosengine.litmuschaos.io/app-sample-chaos created
 
-
+```
 
 Experiment details:
 ```yaml
@@ -577,6 +593,7 @@ spec:
               probePollingInterval: 1
 ```
 
+```bash
 kubectl get pods -n testing
 NAME                             READY   STATUS    RESTARTS   AGE
 app-sample-55b8878cfb-75l2p      1/1     Running   0          21m
@@ -594,6 +611,7 @@ app-sample-chaos-runner          1/1     Running   0            46s
 container-kill-cdykvi--1-w6qhv   1/1     Running   0            41s
 container-kill-helper-cxfvxr     1/1     Running   0            19s
 
+```
 
 The result of the experiment
 ```bash
