@@ -335,7 +335,24 @@ workflow-controller-856d568f68-cv7kn        1/1     Running   0          49s
 
 
 ## Enabling Monitoring
+Create a monitoring namespace:
+```bash
+kubectl create namespace monitoring
+```
 
+Create the operator to instantiate all CRDs
+kubectl -n monitoring apply -f utils/prometheus/prometheus-operator/
+
+Deploy monitoring components
+kubectl -n monitoring apply -f utils/metrics-exporters-with-service-monitors/node-exporter/
+kubectl -n monitoring apply -f utils/metrics-exporters-with-service-monitors/kube-state-metrics/
+
+
+Deploy prometheus instance and all the service monitors for targets
+kubectl -n monitoring apply -f utils/prometheus/prometheus-configuration/
+
+Deploy Grafana
+kubectl -n monitoring apply -f utils/grafana/
 
 ## Experiments
 
