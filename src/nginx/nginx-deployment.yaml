@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app.kubernetes.io/name: app-nginx
-    app: app-nginx
-  name: app-nginx
+    app.kubernetes.io/name: app-sample
+    app: app-sample
+  name: app-sample
 spec:
   selector:
     matchLabels:
-      app.kubernetes.io/name: app-nginx
+      app.kubernetes.io/name: app-sample
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: app-nginx
+        app.kubernetes.io/name: app-sample
     spec:
       containers:
         - image: gcr.io/google_containers/nginx:1.7.9
-          name: app-nginx
+          name: app-sample
           resources:
             limits:
               cpu: "500m"
