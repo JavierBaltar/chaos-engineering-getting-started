@@ -692,6 +692,121 @@ Events:
 
 ```
 
+Once the experiment is finish, the chaos runner and experiment pods are deleted. For troubleshooting purposes, you can modify the "jobCleanPolicy" attribute to "retain". This way, the pods will remain and logs are available:
+
+
+```bash
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChaosEngine
+metadata:
+  name: app-sample-chaos
+  namespace: testing
+spec:
+  annotationCheck: "true"
+  engineState: "active"
+  appinfo:
+    appns: "testing"
+    applabel: "app.kubernetes.io/name=app-sample"
+    appkind: "deployment"
+  chaosServiceAccount: container-kill-sa
+  monitoring: true
+  jobCleanUpPolicy: "retain"
+```
+
+```bash
+kubectl get pods -n testing
+NAME                             READY   STATUS      RESTARTS        AGE
+app-sample-55b8878cfb-pss82      1/1     Running     2 (12m ago)     15m
+app-sample-55b8878cfb-x2kg8      1/1     Running     2 (4m19s ago)   15m
+app-sample-chaos-runner          0/1     Completed   0               4m59s
+container-kill-nrayke--1-bc5kq   0/1     Completed   0               4m58s
+```
+
+
+```bash
+kubectl logs container-kill-nrayke--1-bc5kq -n testing
+time="2022-05-03T17:04:12Z" level=info msg="Experiment Name: container-kill"
+time="2022-05-03T17:04:12Z" level=info msg="[PreReq]: Getting the ENV for the container-kill experiment"
+time="2022-05-03T17:04:14Z" level=info msg="[PreReq]: Updating the chaos result of container-kill experiment (SOT)"
+time="2022-05-03T17:04:18Z" level=info msg="The application information is as follows" Label="app.kubernetes.io/name=app-sample" Target Container= Chaos Duration=20 Container Runtime=docker Namespace=testing
+time="2022-05-03T17:04:18Z" level=info msg="[Status]: Verify that the AUT (Application Under Test) is running (pre-chaos)"
+time="2022-05-03T17:04:18Z" level=info msg="[Status]: The Container status are as follows" Readiness=true container=app-sample Pod=app-sample-55b8878cfb-pss82
+time="2022-05-03T17:04:18Z" level=info msg="[Status]: The status of Pods are as follows" Pod=app-sample-55b8878cfb-pss82 Status=Running
+time="2022-05-03T17:04:18Z" level=info msg="[Status]: The Container status are as follows" Readiness=true container=app-sample Pod=app-sample-55b8878cfb-x2kg8
+time="2022-05-03T17:04:18Z" level=info msg="[Status]: The status of Pods are as follows" Pod=app-sample-55b8878cfb-x2kg8 Status=Running
+time="2022-05-03T17:04:22Z" level=info msg="[Probe]: The http probe information is as follows" URL="http://app-sample.testing.svc.cluster.local:80" Run Properties="{1 5 1 1 0 false}" Mode=Continuous Phase=PreChaos Name=check-frontend-access-url
+time="2022-05-03T17:04:22Z" level=info msg="[Probe]: HTTP get method informations" ResponseCode=200 ResponseTimeout=0 Name=check-frontend-access-url URL="http://app-sample.testing.svc.cluster.local:80" Criteria="=="
+time="2022-05-03T17:04:22Z" level=info msg="[Probe]: {Actual value: 200}, {Expected value: 200}, {Operator: ==}"
+time="2022-05-03T17:04:22Z" level=info msg="[Info]: The tunables are:" Sequence=parallel PodsAffectedPerc=0
+time="2022-05-03T17:04:22Z" level=info msg="[Chaos]:Number of pods targeted: 1"
+time="2022-05-03T17:04:22Z" level=info msg="Target pods list for chaos, [app-sample-55b8878cfb-x2kg8]"
+time="2022-05-03T17:04:24Z" level=info msg="[Info]: Details of application under chaos injection" NodeName=ip-192-168-94-245.eu-west-1.compute.internal ContainerName=app-sample PodName=app-sample-55b8878cfb-x2kg8
+time="2022-05-03T17:04:24Z" level=info msg="[Status]: Checking the status of the helper pods"
+time="2022-05-03T17:04:28Z" level=info msg="[Probe]: HTTP get method informations" ResponseCode=200 ResponseTimeout=0 Name=check-frontend-access-url URL="http://app-sample.testing.svc.cluster.local:80" Criteria="=="
+time="2022-05-03T17:04:34Z" level=info msg="[Probe]: HTTP get method informations" ResponseTimeout=0 Name=check-frontend-access-url URL="http://app-sample.testing.svc.cluster.local:80" Criteria="==" ResponseCode=200
+time="2022-05-03T17:04:36Z" level=info msg="container-kill-helper-davwvs helper pod is in Running state"
+time="2022-05-03T17:04:38Z" level=info msg="[Wait]: waiting till the completion of the helper pod"
+time="2022-05-03T17:04:38Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:04:40Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:04:40Z" level=info msg="[Probe]: HTTP get method informations" ResponseTimeout=0 Name=check-frontend-access-url URL="http://app-sample.testing.svc.cluster.local:80" Criteria="==" ResponseCode=200
+time="2022-05-03T17:04:41Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:04:42Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:04:43Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:04:44Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:04:45Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:04:46Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:04:46Z" level=info msg="[Probe]: HTTP get method informations" ResponseTimeout=0 Name=check-frontend-access-url URL="http://app-sample.testing.svc.cluster.local:80" Criteria="==" ResponseCode=200
+time="2022-05-03T17:04:47Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:04:48Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:04:49Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:04:50Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:04:51Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:04:52Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:04:52Z" level=info msg="[Probe]: HTTP get method informations" Criteria="==" ResponseCode=200 ResponseTimeout=0 Name=check-frontend-access-url URL="http://app-sample.testing.svc.cluster.local:80"
+time="2022-05-03T17:04:53Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:04:54Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:04:55Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:04:56Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:04:57Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:04:58Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:04:58Z" level=info msg="[Probe]: HTTP get method informations" ResponseTimeout=0 Name=check-frontend-access-url URL="http://app-sample.testing.svc.cluster.local:80" Criteria="==" ResponseCode=200
+time="2022-05-03T17:04:59Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:05:00Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:05:01Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:05:02Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:05:03Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:05:04Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:05:04Z" level=info msg="[Probe]: HTTP get method informations" ResponseCode=200 ResponseTimeout=0 Name=check-frontend-access-url URL="http://app-sample.testing.svc.cluster.local:80" Criteria="=="
+time="2022-05-03T17:05:05Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:05:06Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:05:07Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:05:08Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:05:09Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:05:10Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:05:10Z" level=info msg="[Probe]: HTTP get method informations" URL="http://app-sample.testing.svc.cluster.local:80" Criteria="==" ResponseCode=200 ResponseTimeout=0 Name=check-frontend-access-url
+time="2022-05-03T17:05:11Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:05:12Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:05:13Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:05:14Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:05:15Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:05:16Z" level=info msg="helper pod status: Running"
+time="2022-05-03T17:05:16Z" level=info msg="[Probe]: HTTP get method informations" ResponseCode=200 ResponseTimeout=0 Name=check-frontend-access-url URL="http://app-sample.testing.svc.cluster.local:80" Criteria="=="
+time="2022-05-03T17:05:17Z" level=info msg="helper pod status: Succeeded"
+time="2022-05-03T17:05:17Z" level=info msg="[Status]: The running status of Pods are as follows" Status=Succeeded Pod=container-kill-helper-davwvs
+time="2022-05-03T17:05:18Z" level=info msg="[Cleanup]: Deleting all the helper pods"
+time="2022-05-03T17:05:20Z" level=info msg="[Confirmation]: container-kill chaos has been injected successfully"
+time="2022-05-03T17:05:20Z" level=info msg="[Status]: Verify that the AUT (Application Under Test) is running (post-chaos)"
+time="2022-05-03T17:05:20Z" level=info msg="[Status]: The Container status are as follows" container=app-sample Pod=app-sample-55b8878cfb-pss82 Readiness=true
+time="2022-05-03T17:05:20Z" level=info msg="[Status]: The status of Pods are as follows" Pod=app-sample-55b8878cfb-pss82 Status=Running
+time="2022-05-03T17:05:20Z" level=info msg="[Status]: The Container status are as follows" container=app-sample Pod=app-sample-55b8878cfb-x2kg8 Readiness=true
+time="2022-05-03T17:05:20Z" level=info msg="[Status]: The status of Pods are as follows" Pod=app-sample-55b8878cfb-x2kg8 Status=Running
+time="2022-05-03T17:05:22Z" level=info msg="[Probe]: HTTP get method informations" ResponseCode=200 ResponseTimeout=0 Name=check-frontend-access-url URL="http://app-sample.testing.svc.cluster.local:80" Criteria="=="
+time="2022-05-03T17:05:24Z" level=info msg="[Probe]: check-frontend-access-url probe has been Passed 😄 " ProbeName=check-frontend-access-url ProbeType=httpProbe ProbeInstance=PostChaos ProbeStatus=Passed
+time="2022-05-03T17:05:24Z" level=info msg="[Probe]: check-frontend-access-url probe has been Passed 😄 " ProbeInstance=PostChaos ProbeStatus=Passed ProbeName=check-frontend-access-url ProbeType=httpProbe
+time="2022-05-03T17:05:24Z" level=info msg="[The End]: Updating the chaos result of container-kill experiment (EOT)"
+
+```
+
 
 ## **Scheduling Experiments**
 
