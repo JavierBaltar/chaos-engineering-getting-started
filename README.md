@@ -361,10 +361,10 @@ The workflow can be modified by editing the experiment manifest and adding or ar
 The weights of the experiments can be tuned in order to set the importance of each experiment according to your requirements to get a meaningful reliability score. 
 ![10%](docs/images/adjust-weights.png)
 
-
+On the next tab, you can schedule the workflow if the experiment needs to run at specific intervals.
 ![10%](docs/images/chaos-schedule.png)
 
-Finally, the
+Finally, click on Finish to run the workflow. 
 
 ![10%](docs/images/workflow-running.png)
 
@@ -401,7 +401,12 @@ user-db-0                          1/1     Running   0          3m17s
 user-db-1                          1/1     Running   0          2m7s
 ```
 
+After few minutes, the workflow run execution is completed. The workflow details are available using the graph view or the table view as shown below.
 
+![10%](docs/images/graph-view.png)
+
+Click on View Logs & Results to check out the logs and chaos results for the different experiments. 
+![10%](docs/images/chaos-results.png)
 
 ### Container Kill
 
