@@ -172,78 +172,74 @@ eksctl create cluster -f infra/eks-cluster.yaml
 ```
 Output:
 ```bash
-eksctl create cluster -f eks-cluster.yaml
-2022-05-02 00:33:36 [ℹ]  eksctl version 0.95.0
-2022-05-02 00:33:36 [ℹ]  using region eu-west-1
-2022-05-02 00:33:37 [ℹ]  setting availability zones to [eu-west-1a eu-west-1c eu-west-1b]
-2022-05-02 00:33:37 [ℹ]  subnets for eu-west-1a - public:192.168.0.0/19 private:192.168.96.0/19
-2022-05-02 00:33:37 [ℹ]  subnets for eu-west-1c - public:192.168.32.0/19 private:192.168.128.0/19
-2022-05-02 00:33:37 [ℹ]  subnets for eu-west-1b - public:192.168.64.0/19 private:192.168.160.0/19
-2022-05-02 00:33:37 [ℹ]  nodegroup "litmus-demo-ng" will use "" [AmazonLinux2/1.22]
-2022-05-02 00:33:37 [ℹ]  using Kubernetes version 1.22
-2022-05-02 00:33:37 [ℹ]  creating EKS cluster "litmus-demo" in "eu-west-1" region with managed nodes
-2022-05-02 00:33:37 [ℹ]  1 nodegroup (litmus-demo-ng) was included (based on the include/exclude rules)
-2022-05-02 00:33:37 [ℹ]  will create a CloudFormation stack for cluster itself and 0 nodegroup stack(s)
-2022-05-02 00:33:37 [ℹ]  will create a CloudFormation stack for cluster itself and 1 managed nodegroup stack(s)
-2022-05-02 00:33:37 [ℹ]  if you encounter any issues, check CloudFormation console or try 'eksctl utils describe-stacks --region=eu-west-1 --cluster=litmus-demo'
-2022-05-02 00:33:37 [ℹ]  Kubernetes API endpoint access will use default of {publicAccess=true, privateAccess=false} for cluster "litmus-demo" in "eu-west-1"
-2022-05-02 00:33:37 [ℹ]  CloudWatch logging will not be enabled for cluster "litmus-demo" in "eu-west-1"
-2022-05-02 00:33:37 [ℹ]  you can enable it with 'eksctl utils update-cluster-logging --enable-types={SPECIFY-YOUR-LOG-TYPES-HERE (e.g. all)} --region=eu-west-1 --cluster=litmus-demo'
-2022-05-02 00:33:37 [ℹ]
+eksctl create cluster -f infra/eks-cluster.yaml
+2022-05-03 13:02:13 [ℹ]  eksctl version 0.95.0
+2022-05-03 13:02:13 [ℹ]  using region eu-west-1
+2022-05-03 13:02:13 [ℹ]  setting availability zones to [eu-west-1c eu-west-1b eu-west-1a]
+2022-05-03 13:02:13 [ℹ]  subnets for eu-west-1c - public:192.168.0.0/19 private:192.168.96.0/19
+2022-05-03 13:02:13 [ℹ]  subnets for eu-west-1b - public:192.168.32.0/19 private:192.168.128.0/19
+2022-05-03 13:02:13 [ℹ]  subnets for eu-west-1a - public:192.168.64.0/19 private:192.168.160.0/19
+2022-05-03 13:02:13 [ℹ]  nodegroup "litmus-demo-ng" will use "" [AmazonLinux2/1.22]
+2022-05-03 13:02:13 [ℹ]  using Kubernetes version 1.22
+2022-05-03 13:02:13 [ℹ]  creating EKS cluster "litmus-demo" in "eu-west-1" region with managed nodes
+2022-05-03 13:02:13 [ℹ]  1 nodegroup (litmus-demo-ng) was included (based on the include/exclude rules)
+2022-05-03 13:02:13 [ℹ]  will create a CloudFormation stack for cluster itself and 0 nodegroup stack(s)
+2022-05-03 13:02:13 [ℹ]  will create a CloudFormation stack for cluster itself and 1 managed nodegroup stack(s)
+2022-05-03 13:02:13 [ℹ]  if you encounter any issues, check CloudFormation console or try 'eksctl utils describe-stacks --region=eu-west-1 --cluster=litmus-demo'
+2022-05-03 13:02:13 [ℹ]  Kubernetes API endpoint access will use default of {publicAccess=true, privateAccess=false} for cluster "litmus-demo" in "eu-west-1"
+2022-05-03 13:02:13 [ℹ]  CloudWatch logging will not be enabled for cluster "litmus-demo" in "eu-west-1"
+2022-05-03 13:02:13 [ℹ]  you can enable it with 'eksctl utils update-cluster-logging --enable-types={SPECIFY-YOUR-LOG-TYPES-HERE (e.g. all)} --region=eu-west-1 --cluster=litmus-demo'
+2022-05-03 13:02:13 [ℹ]
 2 sequential tasks: { create cluster control plane "litmus-demo",
     2 sequential sub-tasks: {
         wait for control plane to become ready,
         create managed nodegroup "litmus-demo-ng",
     }
 }
-2022-05-02 00:33:37 [ℹ]  building cluster stack "eksctl-litmus-demo-cluster"
-2022-05-02 00:33:37 [ℹ]  deploying stack "eksctl-litmus-demo-cluster"
-2022-05-02 00:34:07 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-02 00:34:38 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-02 00:35:38 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-02 00:36:38 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-02 00:37:38 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-02 00:38:39 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-02 00:39:39 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-02 00:40:39 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-02 00:41:39 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-02 00:42:40 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-02 00:43:40 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-02 00:44:40 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-02 00:45:40 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
-2022-05-02 00:47:43 [ℹ]  building managed nodegroup stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
-2022-05-02 00:47:43 [ℹ]  deploying stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
-2022-05-02 00:47:43 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
-2022-05-02 00:48:14 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
-2022-05-02 00:48:55 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
-2022-05-02 00:49:39 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
-2022-05-02 00:51:31 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
-
-2022-05-02 00:52:39 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
-2022-05-02 00:52:39 [ℹ]  waiting for the control plane availability...
-2022-05-02 00:52:39 [✔]  saved kubeconfig as "/Users/javier/.kube/config"
-2022-05-02 00:52:39 [ℹ]  no tasks
-2022-05-02 00:52:39 [✔]  all EKS cluster resources for "litmus-demo" have been created
-2022-05-02 00:52:40 [ℹ]  nodegroup "litmus-demo-ng" has 4 node(s)
-2022-05-02 00:52:40 [ℹ]  node "ip-192-168-19-54.eu-west-1.compute.internal" is ready
-2022-05-02 00:52:40 [ℹ]  node "ip-192-168-42-161.eu-west-1.compute.internal" is ready
-2022-05-02 00:52:40 [ℹ]  node "ip-192-168-55-88.eu-west-1.compute.internal" is ready
-2022-05-02 00:52:40 [ℹ]  node "ip-192-168-66-101.eu-west-1.compute.internal" is ready
-2022-05-02 00:52:40 [ℹ]  waiting for at least 2 node(s) to become ready in "litmus-demo-ng"
-2022-05-02 00:52:40 [ℹ]  nodegroup "litmus-demo-ng" has 4 node(s)
-2022-05-02 00:52:40 [ℹ]  node "ip-192-168-19-54.eu-west-1.compute.internal" is ready
-2022-05-02 00:52:40 [ℹ]  node "ip-192-168-42-161.eu-west-1.compute.internal" is ready
-2022-05-02 00:52:40 [ℹ]  node "ip-192-168-55-88.eu-west-1.compute.internal" is ready
-2022-05-02 00:52:40 [ℹ]  node "ip-192-168-66-101.eu-west-1.compute.internal" is ready
-2022-05-02 00:52:41 [ℹ]  kubectl command should work with "/Users/javier/.kube/config", try 'kubectl get nodes'
-2022-05-02 00:52:41 [✔]  EKS cluster "litmus-demo" in "eu-west-1" region is ready
+2022-05-03 13:02:13 [ℹ]  building cluster stack "eksctl-litmus-demo-cluster"
+2022-05-03 13:02:14 [ℹ]  deploying stack "eksctl-litmus-demo-cluster"
+2022-05-03 13:02:44 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-03 13:03:14 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-03 13:04:14 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-03 13:05:15 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-03 13:06:15 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-03 13:07:15 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-03 13:08:15 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-03 13:09:15 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-03 13:10:16 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-03 13:11:16 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-03 13:12:16 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-cluster"
+2022-05-03 13:14:24 [ℹ]  building managed nodegroup stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
+2022-05-03 13:14:24 [ℹ]  deploying stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
+2022-05-03 13:14:24 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
+2022-05-03 13:14:55 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
+2022-05-03 13:15:42 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
+2022-05-03 13:16:23 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
+2022-05-03 13:17:52 [ℹ]  waiting for CloudFormation stack "eksctl-litmus-demo-nodegroup-litmus-demo-ng"
+2022-05-03 13:17:52 [ℹ]  waiting for the control plane availability...
+2022-05-03 13:17:52 [✔]  saved kubeconfig as "/Users/javier/.kube/config"
+2022-05-03 13:17:52 [ℹ]  no tasks
+2022-05-03 13:17:52 [✔]  all EKS cluster resources for "litmus-demo" have been created
+2022-05-03 13:17:53 [ℹ]  nodegroup "litmus-demo-ng" has 4 node(s)
+2022-05-03 13:17:53 [ℹ]  node "ip-192-168-20-123.eu-west-1.compute.internal" is ready
+2022-05-03 13:17:53 [ℹ]  node "ip-192-168-49-106.eu-west-1.compute.internal" is ready
+2022-05-03 13:17:53 [ℹ]  node "ip-192-168-54-251.eu-west-1.compute.internal" is ready
+2022-05-03 13:17:53 [ℹ]  node "ip-192-168-74-122.eu-west-1.compute.internal" is ready
+2022-05-03 13:17:53 [ℹ]  waiting for at least 2 node(s) to become ready in "litmus-demo-ng"
+2022-05-03 13:17:53 [ℹ]  nodegroup "litmus-demo-ng" has 4 node(s)
+2022-05-03 13:17:53 [ℹ]  node "ip-192-168-20-123.eu-west-1.compute.internal" is ready
+2022-05-03 13:17:53 [ℹ]  node "ip-192-168-49-106.eu-west-1.compute.internal" is ready
+2022-05-03 13:17:53 [ℹ]  node "ip-192-168-54-251.eu-west-1.compute.internal" is ready
+2022-05-03 13:17:53 [ℹ]  node "ip-192-168-74-122.eu-west-1.compute.internal" is ready
+2022-05-03 13:17:54 [ℹ]  kubectl command should work with "/Users/javier/.kube/config", try 'kubectl get nodes'
+2022-05-03 13:17:54 [✔]  EKS cluster "litmus-demo" in "eu-west-1" region is ready
 
 kubectl get nodes
-NAME                                           STATUS   ROLES    AGE     VERSION
-ip-192-168-19-54.eu-west-1.compute.internal    Ready    <none>   3m51s   v1.22.6-eks-7d68063
-ip-192-168-42-161.eu-west-1.compute.internal   Ready    <none>   3m46s   v1.22.6-eks-7d68063
-ip-192-168-55-88.eu-west-1.compute.internal    Ready    <none>   3m50s   v1.22.6-eks-7d68063
-ip-192-168-66-101.eu-west-1.compute.internal   Ready    <none>   3m52s   v1.22.6-eks-7d68063
+NAME                                           STATUS   ROLES    AGE   VERSION
+ip-192-168-20-123.eu-west-1.compute.internal   Ready    <none>   87s   v1.22.6-eks-7d68063
+ip-192-168-49-106.eu-west-1.compute.internal   Ready    <none>   85s   v1.22.6-eks-7d68063
+ip-192-168-54-251.eu-west-1.compute.internal   Ready    <none>   88s   v1.22.6-eks-7d68063
+ip-192-168-74-122.eu-west-1.compute.internal   Ready    <none>   88s   v1.22.6-eks-7d68063
 
 ```
 
@@ -266,7 +262,10 @@ Create a Litmus namespace:
 kubectl create namespace litmus
 ```
 
-Install Litmus:
+Install Litmus.
+
+As a prerequisite, you will need to have Helm installed on your system. 
+Next, add the LitmusChaos Helm repository and then issue the helm install command below. 
 
 ```bash
 helm repo add litmuschaos https://litmuschaos.github.io/litmus-helm/
@@ -274,7 +273,7 @@ helm repo add litmuschaos https://litmuschaos.github.io/litmus-helm/
 
 helm install chaos litmuschaos/litmus --namespace=litmus -f override-service-type-litmus.yaml
 NAME: chaos
-LAST DEPLOYED: Sun May  1 15:16:30 2022
+LAST DEPLOYED: Tue May  3 13:20:23 2022
 NAMESPACE: litmus
 STATUS: deployed
 REVISION: 1
@@ -284,12 +283,14 @@ Thank you for installing litmus 😀
 
 Your release is named chaos and it's installed to namespace: litmus.
 
+Visit https://docs.litmuschaos.io to find more info.
+
 ```
 
 List the services. The frontend service external endpoint might be displayed as pending for a minute. 
 
 ```bash
-kubectl get svc -n litmus
+kubectl get services -n litmus
 NAME                               TYPE           CLUSTER-IP       EXTERNAL-IP                                                               PORT(S)             AGE
 chaos-litmus-auth-server-service   ClusterIP      10.100.134.234   <none>                                                                    9003/TCP,3030/TCP   16s
 chaos-litmus-frontend-service      LoadBalancer   10.100.138.168   ad6c5181576aa45d6bd2e70c837c29bf-1312593859.eu-west-1.elb.amazonaws.com   9091:30356/TCP      16s
@@ -304,17 +305,45 @@ After login to the portal using default credentials (admin/litmus), you will be 
 
 ![10%](docs/images/chaos-center.png)
 
+
+Once the login is completed, Chaos Operator is deployed in the Litmus namespace. 
+
+```bash
+kubectl get pods -n litmus
+NAME                                        READY   STATUS    RESTARTS   AGE
+chaos-litmus-auth-server-785847bc86-dz8cz   1/1     Running   0          3m49s
+chaos-litmus-frontend-847cf9ddbd-hz82b      1/1     Running   0          3m49s
+chaos-litmus-mongo-0                        1/1     Running   0          3m49s
+chaos-litmus-server-85574f6c69-qp2jv        1/1     Running   0          3m49s
+
+kubectl get pods -n litmus
+NAME                                        READY   STATUS    RESTARTS   AGE
+chaos-exporter-7d4c89d779-csg2g             1/1     Running   0          48s
+chaos-litmus-auth-server-785847bc86-dz8cz   1/1     Running   0          7m26s
+chaos-litmus-frontend-847cf9ddbd-hz82b      1/1     Running   0          7m26s
+chaos-litmus-mongo-0                        1/1     Running   0          7m26s
+chaos-litmus-server-85574f6c69-qp2jv        1/1     Running   0          7m26s
+chaos-operator-ce-d698f8478-crpr9           1/1     Running   0          48s
+event-tracker-8567f867-6kqqs                1/1     Running   0          47s
+subscriber-67b8bfcc89-4w48j                 1/1     Running   0          47s
+workflow-controller-856d568f68-cv7kn        1/1     Running   0          49s
+```
+
 ![10%](docs/images/chaos-center-home.png)
 
 ![10%](docs/images/chaos-agents.png)
 
 
-Enabling Monitoring
+## Enabling Monitoring
 
 
-## Experiments**
+## Experiments
+
+
 
 ### Sock Shop Workflow Template
+
+LitmusChaos comes with three pre-defined workflows, which deploy a bunch of microservices to play with. We will be running a podtato-head workflow, which creates a simple deployment and then injects the pod-delete experiment into it.
 
 Browse the dashboard and select Schedule a Workflow. In the Workflows dashboard, select the Self-Agent and then click on Next. Select Create a Workflow from Pre-defined Templates and then select sock shop and then click on Next.
 
