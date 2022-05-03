@@ -363,6 +363,11 @@ Go back to Chaos Center and browse the Analytics tab.
 
 ![10%](docs/images/analytics-prometheus-data-source.png)
 
+
+![10%](docs/images/analytics-dashboard.png)
+
+![10%](docs/images/grafana-dashboard.png)
+
 ## Experiments
 
 
