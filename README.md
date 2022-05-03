@@ -354,12 +354,19 @@ In the Workflows dashboard, select the Self-Agent and then click on Next.
 Select Create a Workflow from Pre-defined Templates and then select sock shop and then click on Next.
 ![10%](docs/images/pre-defined-workflow-template.png)
 
-
+The workflow can be modified by editing the experiment manifest and adding or arranging the experiments settings. 
 ![10%](docs/images/tune-workflow.png)
 
-![10%](docs/images/workflow-running.png)
 
+The weights of the experiments can be tuned in order to set the importance of each experiment according to your requirements to get a meaningful reliability score. 
 ![10%](docs/images/adjust-weights.png)
+
+
+![10%](docs/images/chaos-schedule.png)
+
+Finally, the
+
+![10%](docs/images/workflow-running.png)
 
 ```bash
 kubectl get pods -n sock-shop
