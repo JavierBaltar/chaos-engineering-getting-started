@@ -299,9 +299,10 @@ chaos-litmus-mongo                 ClusterIP      10.100.180.113   <none>       
 chaos-litmus-server-service        ClusterIP      10.100.249.254   <none>                                                                    9002/TCP,8000/TCP   16s
 
 ```
+NOTE: It may take few minutes to complete the rollout. 
 
 Browse the external-ip:9091 in your browser.
-After login to the portal using default credentials (admin/litmus), you will be asked to change your password.
+After login to the portal using default credentials (username: admin/ password: litmus), you will be asked to change your password.
 
 ![10%](docs/images/chaos-center.png)
 
@@ -353,6 +354,9 @@ kubectl -n monitoring apply -f utils/prometheus/prometheus-configuration/
 
 Deploy Grafana
 kubectl -n monitoring apply -f utils/grafana/
+
+Go back to Chaos Center and browse the Analytics tab.
+
 
 ## Experiments
 
