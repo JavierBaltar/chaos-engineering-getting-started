@@ -510,6 +510,60 @@ kubectl apply -f chaos-engine-kill-container.yaml -n testing
 chaosengine.litmuschaos.io/app-sample-chaos created
 
 
+
+Experiment details:
+```yaml
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChaosEngine
+metadata:
+  name: app-sample-chaos
+  namespace: testing
+spec:
+  annotationCheck: "true"
+  engineState: "active"
+  appinfo:
+    appns: "testing"
+    applabel: "app.kubernetes.io/name=app-sample"
+    appkind: "deployment"
+  chaosServiceAccount: container-kill-sa
+  monitoring: true
+  jobCleanUpPolicy: "delete"
+  experiments:
+    - name: container-kill
+      spec:
+        components:
+          env:
+            # provide the chaos interval
+            - name: CHAOS_INTERVAL
+              value: "10"
+
+            # provide the total chaos duration
+            - name: TOTAL_CHAOS_DURATION
+              value: "20"
+
+            - name: CONTAINER_RUNTIME
+              value: "docker"
+
+            - name: SOCKET_PATH
+              value: "/var/run/docker.sock"
+        probe:
+          - name: "check-frontend-access-url"
+            type: "httpProbe"
+            httpProbe/inputs:
+              url: "http://a587b6b418a0a475d9860ed3f85f4b4e-800872529.eu-west-1.elb.amazonaws.com:80"
+              insecureSkipVerify: false
+              method:
+                get:
+                  criteria: ==
+                  responseCode: "200"
+            mode: "Continuous"
+            runProperties:
+              probeTimeout: 1
+              interval: 5
+              retry: 1
+              probePollingInterval: 1
+```
+
 kubectl get pods -n testing
 NAME                             READY   STATUS    RESTARTS   AGE
 app-sample-55b8878cfb-75l2p      1/1     Running   0          21m
