@@ -24,7 +24,7 @@ Chaos Engineering for Kubernetes introduction
  - [**Author**](#author)
 
 ## **Introduction**
-The main objective of this demo is discussing on how to bring understanding to a system that is fundamentally not understandable.
+This is a quick tutorial on how to get started with Chaos Engineering for Kubernetes. We will first discuss discussing on how to bring understanding to a system that is fundamentally not understandable, followed by running a brief demo on Litmus Chaos tool.
 
 ## **Chaos Engineering**
 
