@@ -4,6 +4,7 @@ Chaos Engineering for Kubernetes introduction
  - [**Introduction**](#Introduction)
  - [**Chaos Engineering**](#chaos-engineering)
    - [**Principles**](#principles)
+   - [**First Steps**](#first-steps)
    - [**Use Cases**](#use-cases)
    - [**Benefits**](#benefitss)
    - [**Challenges and Pitfalls**](#challenges-and-pitfalls)
@@ -37,7 +38,7 @@ Chaos Engineering should not be confused with testing. Unit testing validates th
 
 Chaos Engineering methodologies imply the deliberate introduction of faulty conditions into a system to understand how the system will react and what could be its side effects.
 
-## **Chaos Engineering Principles**
+## **Principles**
 TBC.
 
 ### **First Steps**
