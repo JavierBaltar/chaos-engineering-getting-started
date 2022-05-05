@@ -24,7 +24,7 @@ Chaos Engineering for Kubernetes introduction
  - [**Author**](#author)
 
 ## **Introduction**
-This is a quick tutorial on how to get started with Chaos Engineering for Kubernetes. We will first discuss on how to bring understanding to a system that is fundamentally not understandable, followed by running a brief demo on Litmus Chaos tool.
+This is a tutorial on how to get started with Chaos Engineering for Kubernetes. We will first discuss on how to bring understanding to a system that is fundamentally not understandable, followed by running a brief demo on Litmus Chaos tool.
 
 ## **Chaos Engineering**
 The history of Chaos Engineering begins with Netflix migration from datacenter to AWS cloud public provider in 2010. Netflix engineers decided to develop a suite called Chaos Monkey to test various failure conditions and ensure proper customer experience.
@@ -33,16 +33,9 @@ Later on, Simian Army (a Chaos Monkey evolution) included tools to test AWS infr
 
 The academic definition considers Chaos Engineering as the discipline of experimenting on a system in order to build confidence in the system’s capability to withstand turbulent conditions in production.
 
-Difference Between Chaos Engineering And Testing : 
+Chaos Engineering should not be confused with testing. Unit testing validates the expected behaviour of a component that is independent of all external components whereas integration testing checks the interaction of interdependant components. The uncertainty of complex systems such as microservices architectures requires a wider approach.  
 
-When we develop an application, we pass it through various tests that include Unit Tests, Integration Tests, and System Tests. 
-
-With Unit testing, we write a unit test case and check the expected behaviour of a component that is independent of all external components whereas Integration testing checks the interaction of individual and inter-dependant components. But even extensive testing does not provide us with a guaranteed error-free system because this testing examines only pre-defined and single scenarios. The results don't cover new information about the application, system behaviour, performance, and properties. This uncertainty increases with the use of microservice architectures, where the system grows with passing time. 
-
-Whereas in chaos, it generates a wide range and unpredictable outcome for experimenting on a distributed architecture to build confidence in the system’s capability and withstand turbulent conditions in production. Chaos Testing is a deliberate introduction of failure and faulty scenarios into our system to understand how the system will react and what could be its side effects. This type of testing is an effective method to prevent/minimize outages before they impact the system and ultimately the business.  
-
-
-
+Chaos Engineering methodologies imply the deliberate introduction of faulty conditions into a system to understand how the system will react and what could be its side effects.
 
 ## **Chaos Engineering Principles**
 
