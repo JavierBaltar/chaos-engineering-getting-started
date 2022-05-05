@@ -958,4 +958,4 @@ eksctl delete cluster --name litmus-demo
 - [Awesome Chaos Engineering](https://github.com/dastergon/awesome-chaos-engineering)
 
 ## **Author**
-Javier Baltar - [linkedIn](https://www.linkedin.com/in/javierbaltar/) | [github](https://github.com/JavierBaltar)
+Javier Baltar - [LinkedIn](https://www.linkedin.com/in/javierbaltar/) | [Github](https://github.com/JavierBaltar)
