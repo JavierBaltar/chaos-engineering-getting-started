@@ -38,6 +38,18 @@ Chaos Engineering should not be confused with testing. Unit testing validates th
 Chaos Engineering methodologies imply the deliberate introduction of faulty conditions into a system to understand how the system will react and what could be its side effects.
 
 ## **Chaos Engineering Principles**
+TBC.
+
+### **First Steps**
+As with any scientific experiment, getting started with chaos engineering requires communication, preparation, organization, and the ability to monitor the output and results.
+
+First, you should understand the applications and architecture of the target environment in order to recognize the effects of the injected chaos. Being familiar with the baseline, creates a blueprint for monitoring during the testing and analyzing chaos output after.
+
+Establish a hypothesis and foresee what could go wrong. With a clear idea of the system’s starting state, ask what could go wrong. With a clear idea of the system’s starting state, ask what could go wrong. Understand service-level indicators and service-level objectives and use them as a basis for establishing an assumption for how the system should work under pressure.
+
+Introduce chaos one variable at a time. To keep control of the blast radius, introduce only a little chaos at a time, so you can appreciate the results. Be prepared to abort the experiment under certain conditions, so no harm comes to production software, and also have a roll-back plan if something goes wrong. During the test, try to disprove the hypothesis to discover areas to focus on to improve system resilience.
+Monitor and record the results. Monitor the experiment to record any nuances in application behavior. Analyze the results to see how the application responds and whether testing achieved the teams’ expectations. Use investigation tools to understand the precise root causes of slow-downs and failures.
+
 
 ### **Benefits**
 
@@ -67,13 +79,6 @@ Lack of observability. Establishing that control can be easier said than done. L
 
 Unclear starting system state. Another issue is having a clear picture of the starting state of the system before the test is run. Without this clarity, teams can have difficulty understanding the true effects of the test. This can diminish the effectiveness of chaos testing, and can put downstream systems at greater risk and make it harder to control the blast radius.
 
-### **First Steps**
-As with any scientific experiment, getting started with chaos engineering requires a little preparation, organization, and the ability to monitor and measure results.
-
-Know the starting state of your environment. To plan a well-controlled chaos test, you should understand the applications, microservices, and architectural design of your environment so you can recognize the effects of the test. Having a baseline you can compare to the end state creates a blueprint for monitoring during the testing and analyzing results after.
-Ask what could go wrong and establish a hypothesis. With a clear idea of the system’s starting state, ask what could go wrong. With a clear idea of the system’s starting state, ask what could go wrong. Understand service-level indicators and service-level objectives and use them as a basis for establishing an assumption for how the system should work under pressure.
-Introduce chaos one variable at a time. To keep control of the blast radius, introduce only a little chaos at a time, so you can appreciate the results. Be prepared to abort the experiment under certain conditions, so no harm comes to production software, and also have a roll-back plan if something goes wrong. During the test, try to disprove the hypothesis to discover areas to focus on to improve system resilience.
-Monitor and record the results. Monitor the experiment to record any nuances in application behavior. Analyze the results to see how the application responds and whether testing achieved the teams’ expectations. Use investigation tools to understand the precise root causes of slow-downs and failures.
 
 
 ## **Tools**
