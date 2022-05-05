@@ -27,14 +27,13 @@ Chaos Engineering for Kubernetes introduction
 This is a quick tutorial on how to get started with Chaos Engineering for Kubernetes. We will first discuss discussing on how to bring understanding to a system that is fundamentally not understandable, followed by running a brief demo on Litmus Chaos tool.
 
 ## **Chaos Engineering**
+The history of Chaos Engineering begins with Netflix migration from datacenter to AWS cloud public provider in 2010. Netflix engineers decided to develop a suite called Chaos Monkey to test various failure conditions and ensure customer experience.
 
-Started back in the days in Netflix and amazon moving to datacenter to cloud public provider aws specifically (chaos monkey to simian army)
+Later on, Simian Army (a Chaos Monkey evolution) included tools to test AWS infrastructure and services resiliency againsts failures such as disabling an AWS region, dropping an availability zone, simulating network delays and outages, etc. 
+
+The academic definition Chaos Engineering is the discipline of experimenting on a system in order to build confidence in the system’s capability to withstand turbulent conditions in production.
 
 Chaos Engineering is the discipline of experimenting on a system in order to build confidence in the system’s capability to withstand turbulent conditions in production.
-
-Chaos engineering started in 2010 during Netflix migration to cloud infrastructure. Netflix engineers decided to develop a suite called Chaos Monkey to test various failure conditions and ensure customer experience.
-
-Later on, Simian Army (a Chaos Monkey evolution) included tools to test AWS infrastrucure and services resiliency againsts failures such as disabling an AWS region, dropping an availability zone, simulating network delays and outages, etc. 
 
 Difference Between Chaos Engineering And Testing : 
 
