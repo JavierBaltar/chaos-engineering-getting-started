@@ -106,9 +106,9 @@ This operator is built using the Operator SDK framework and manages the lifecycl
 
 - Chaos Custom Resource Definitions
 Litmus comes with three main CRDs: ChaosEngine, ChaosExperiment, and ChaosResult. 
-- ChaosExperiment defines the experiment itself, actions, and their schedule. 
-- ChaosEngine connects an application or Kubernetes node to the specific ChaosExperiment
-- ChaosResult stores the results of the experiment. Operator exports it as Prometheus metrics.
+  - ChaosExperiment defines the experiment itself, actions, and their schedule. 
+  - ChaosEngine connects an application or Kubernetes node to the specific ChaosExperiment
+  - ChaosResult stores the results of the experiment. Operator exports it as Prometheus metrics.
 
 Chaos Hub
 Chaos experiments are the custom resources on Kubernetes. The YAML specifications for these custom resources are hosted at the public ChaosHub (https://hub.litmuschaos.io).
