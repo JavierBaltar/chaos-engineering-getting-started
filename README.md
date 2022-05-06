@@ -149,6 +149,7 @@ Allowing image addition from custom image server (both public and private)
 Measure and Analyse the Resilience Score of each workflow
 
 #### Experiments Workflow
+The diagram below depicts the Litmus experiments workflow process:
 
 Once a chaosengine object is created, Litmus creates the Chaos runner pod in the target namespace. This runner will orchestrate the experiment in the specified namespace and against the specified targets. 
 
