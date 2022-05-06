@@ -123,8 +123,7 @@ This is a Prometheus metrics exporter. Chaos metrics such as the number, type of
 Litmus generates a chaos event for every chaos action that it takes. These chaos events are stored in etcd, and later exported to an event receiver for doing correlation or debugging of a service affected by chaos injection.
 
 - Chaos Center
-Litmus Portal is a centralized web portal for creating, scheduling, and monitoring chaos workflows. A chaos workflow is a set of chaos experiments. Chaos workflows can be scheduled on remote Kubernetes clusters from the portal. SRE teams can share the portal while managing chaos through the portal. 
-ChaosCenter provides a single pane of glass to configure, operate and monitor your experiments:
+It is a centralized portal which provides a single pane of glass to configure, operate and monitor your experiments:
   - Workflow Creation
 From Templates, Custom Workflows from Scratch (using ChaosHubs), From pre-created YAMLs
 Chaos Experiments Sequence Control (Parallel as well as Sequential steps creation)
