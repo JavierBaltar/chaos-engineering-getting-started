@@ -53,8 +53,9 @@ Monitor and record the results. Monitor the experiment to record any nuances in 
 
 
 ### **Benefits**
+Embracing Chaos Engineering brings the following benefits:
 
-Increases resiliency and reliability. Chaos testing enriches the organization’s intelligence about how software performs under stress and how to make it more resilient.
+- Increases resiliency and reliability. Chaos testing enriches the organization’s intelligence about how software performs under stress and how to make it more resilient.
 
 Accelerates innovation. Intelligence from chaos testing funnels back to developers who can implement design changes that make software more durable and improve production quality.
 
