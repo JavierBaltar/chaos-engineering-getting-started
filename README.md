@@ -55,31 +55,28 @@ Monitor and record the results. Monitor the experiment to record any nuances in 
 ### **Benefits**
 Embracing Chaos Engineering brings the following benefits:
 
-- Increases resiliency and reliability. Chaos testing enriches the organization’s intelligence about how software performs under stress and how to make it more resilient.
+- Increases resiliency and reliability by improving organization awareness about how systems perform under stress and how to make it more resilient. Production outages can lead to huge amount of losses to companies, therefore Chaos Engineering helps in the prevention of large impact in revenue. 
 
-Accelerates innovation. Intelligence from chaos testing funnels back to developers who can implement design changes that make software more durable and improve production quality.
+- Speeds up incident response by learning from failure scenarios. In that way, teams can speed troubleshooting and incident response. Chaos Engineering tries out teams response in the event of an incident. Also, proves observability and monitoring systems response. 
 
-Advances collaboration. Developers aren’t the only group to see advantages. The insights chaos engineers glean from their experiments elevate the expertise of the technical group, leading to response times and better collaboration.
+- Reduces production incidents for the future by improving the confidence and engagement of team members involved for carrying out disaster recovery and making applications highly reliable on every iteration. 
 
-Speeds incident response. By learning what failure scenarios are possible, these teams can speed troubleshooting, repairs, and incident response.
+- Improves customer satisfaction since increased resilience and faster response times mean less downtime and high performance.
 
-Improves customer satisfaction. Increased resilience and faster response times mean less down-time. Greater innovation and collaboration from development and SRE teams means better software that meets new customer demands quickly with efficiency and high performance.
-
-Boosts business outcomes. Chaos testing can also extend an organization’s competitive advantage through faster time-to-value, saving time, money, and resources, and producing a better bottom line.
-
-Insights received after running chaos testing can lead to a reduction in production incidents for the future. 
-Through Chaos Engineering, the team can verify the system's behaviour on failure so that accordingly it takes action. 
-Chaos Engineering helps in the testing response of the team to the incident. Also, helps in testing if the raised alert has been notified to the correct team. 
-On a high level, Chaos Engineering provides us an advantage by overall system availability. Chaos Experiments make the system more resilient to failures. 
-Production outages can lead to huge losses to companies depending on the usage of the system, therefore chaos engineering helps in the prevention of large losses in revenue. 
-It helps in improving the confidence and engagement of team members for carrying out disaster recovery methods and makes applications highly reliable. 
+- Boosts business impact and accelerates innovation by extending organizations competitive advantage through saving time and resources. Chaos Engineering results generate synergies back to developers who quickly implement changes for improving the quality of the software released. 
 
 ### **Challenges and Pitfalls**
+Chaos Engineering practice implies the following challenges and potential pitfalls:
+
+- Beginning can be scary due to an unclear starting system state. Without this clarity, teams can have difficulty understanding the true effects of the test. This can diminish the effectiveness of chaos testing, and can put downstream systems at greater risk and make it harder to control the blast radius.
+
+- Teams have limited time and resources. 
+
+
 Unnecessary damage. The major concern with chaos testing is the potential for unnecessary damage. Chaos engineering can lead to a real-world loss that exceeds the allowances of justifiable testing. To limit the cost of uncovering application vulnerabilities, organizations should to avoid tests that overrun the designated blast radius. The goal is to control the blast radius so you can pinpoint the cause of failure without unnecessarily introducing new points of failure.
 
 Lack of observability. Establishing that control can be easier said than done. Lack of end-to-end observability and monitoring into all systems a blast radius might affect is a common problem. Without comprehensive observability, it can be difficult to understand critical dependencies vs non-critical dependencies, or to have adequate context to understand the true business impact of a failure or degradation in order to prioritize fixes. Lack of visibility can also make it difficult for teams to determine the exact root cause of an issue, which can complicate remediation plans.
 
-Unclear starting system state. Another issue is having a clear picture of the starting state of the system before the test is run. Without this clarity, teams can have difficulty understanding the true effects of the test. This can diminish the effectiveness of chaos testing, and can put downstream systems at greater risk and make it harder to control the blast radius.
 
 
 
