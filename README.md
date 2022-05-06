@@ -72,13 +72,9 @@ Chaos Engineering practice implies the following challenges and potential pitfal
 
 - Teams have limited time and resources. 
 
+- Generates controversy and becomes political at management level due to the idea of potential unnecessary damage. In order to limit this, teams should avoid experiments that overrun the designated blast radius. The goal is narrowing down the cause of failure without unnecessarily introducing new points of failure.
 
-Unnecessary damage. The major concern with chaos testing is the potential for unnecessary damage. Chaos engineering can lead to a real-world loss that exceeds the allowances of justifiable testing. To limit the cost of uncovering application vulnerabilities, organizations should to avoid tests that overrun the designated blast radius. The goal is to control the blast radius so you can pinpoint the cause of failure without unnecessarily introducing new points of failure.
-
-Lack of observability. Establishing that control can be easier said than done. Lack of end-to-end observability and monitoring into all systems a blast radius might affect is a common problem. Without comprehensive observability, it can be difficult to understand critical dependencies vs non-critical dependencies, or to have adequate context to understand the true business impact of a failure or degradation in order to prioritize fixes. Lack of visibility can also make it difficult for teams to determine the exact root cause of an issue, which can complicate remediation plans.
-
-
-
+- Lack of monitoring and observability. Without comprehensive observability, it is difficult to understand the starting system state and the business impact of injected failures. Lack of visibility makes challenging for teams to determine the root cause of an issue which complicates fixing and remediation.
 
 ## **Tools**
 
