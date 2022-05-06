@@ -123,18 +123,9 @@ This is a Prometheus metrics exporter. Chaos metrics such as the number, type of
 Litmus generates a chaos event for every chaos action that it takes. These chaos events are stored in etcd, and later exported to an event receiver for doing correlation or debugging of a service affected by chaos injection.
 
 - Chaos Center
-It is a centralized portal which provides a single pane of glass to configure, operate and monitor your experiments:
-  - Workflow Creation
-From Templates, Custom Workflows from Scratch (using ChaosHubs), From pre-created YAMLs
-Chaos Experiments Sequence Control (Parallel as well as Sequential steps creation)
-Creation of either Singular or Cron Workflows as Schedules
-Attaching priority to Chaos Experiments based on your use cases
-
-  - Users & Teams
-Creation of Users with Role Based Access Control
-Creating a Team of multiple Users
-Authenticating Users
-
+It is a centralized portal which provides a single pane of glass to configure, operate and monitor your experiments. The Center comes with the following features:
+  - Workflow Creation from Chaos Hub or pre-defined yaml files. 
+  - User management control. It supports creation of users and teams with Role Based Access Control.
   - Monitoring & Observability
 Connect a Data Source (from any Agent) and monitor workflows
 Visualize workflow run statistics and aggregated schedules
@@ -142,6 +133,7 @@ Compare two or more Workflows
 Upload shared/downloadable dashboards available in the community
 Edit queries, Tune dashboards to create a custom one from scratch
 Monitor effect of chaos in real time with interleaved events and metrics from Prometheus Datasource
+
  - Workflow Management
 Rolling out automated changes using GitOps
 Allowing image addition from custom image server (both public and private)
