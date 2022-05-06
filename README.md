@@ -124,7 +124,29 @@ Litmus generates a chaos event for every chaos action that it takes. These chaos
 
 - Chaos Center
 Litmus Portal is a centralized web portal for creating, scheduling, and monitoring chaos workflows. A chaos workflow is a set of chaos experiments. Chaos workflows can be scheduled on remote Kubernetes clusters from the portal. SRE teams can share the portal while managing chaos through the portal. 
+ChaosCenter provides a single pane of glass to configure, operate and monitor your experiments:
+  - Workflow Creation
+From Templates, Custom Workflows from Scratch (using ChaosHubs), From pre-created YAMLs
+Chaos Experiments Sequence Control (Parallel as well as Sequential steps creation)
+Creation of either Singular or Cron Workflows as Schedules
+Attaching priority to Chaos Experiments based on your use cases
 
+  - Users & Teams
+Creation of Users with Role Based Access Control
+Creating a Team of multiple Users
+Authenticating Users
+
+  - Monitoring & Observability
+Connect a Data Source (from any Agent) and monitor workflows
+Visualize workflow run statistics and aggregated schedules
+Compare two or more Workflows
+Upload shared/downloadable dashboards available in the community
+Edit queries, Tune dashboards to create a custom one from scratch
+Monitor effect of chaos in real time with interleaved events and metrics from Prometheus Datasource
+ - Workflow Management
+Rolling out automated changes using GitOps
+Allowing image addition from custom image server (both public and private)
+Measure and Analyse the Resilience Score of each workflow
 
 #### Experiments Workflow
 
@@ -133,32 +155,6 @@ Once a chaosengine object is created, Litmus creates the Chaos runner pod in the
 Target identification is something that makes Litmus different. To zero in on the target, the user has to insert a specific annotation on the deployment (more workloads are supported here: DaemonSet, StatefulSet and DeploymentConfig). Then, the user needs to modify the labels and fields in the chaosengine object (an example is shown below) so that Litmus can then locate all (or some) of the pods of the target deployment. 
 
 Once the Operator verifies that all the above prerequisites are met (correct labelling, annotation, Chaosexperiment object, permissions), it will create a pod of the experiment runner, which is responsible for the execution of the experiment. This workflow allows for limiting the blast radius of an experiment, as well as for concurrent experiment executions.
-
-### **Chaos Center**
-ChaosCenter provides a single pane of glass to configure, operate and monitor your experiments:
-- Workflow Creation
-From Templates, Custom Workflows from Scratch (using ChaosHubs), From pre-created YAMLs
-Chaos Experiments Sequence Control (Parallel as well as Sequential steps creation)
-Creation of either Singular or Cron Workflows as Schedules
-Attaching priority to Chaos Experiments based on your use cases
-
-- Users & Teams
-Creation of Users with Role Based Access Control
-Creating a Team of multiple Users
-Authenticating Users
-
-- Monitoring & Observability
-Connect a Data Source (from any Agent) and monitor workflows
-Visualize workflow run statistics and aggregated schedules
-Compare two or more Workflows
-Upload shared/downloadable dashboards available in the community
-Edit queries, Tune dashboards to create a custom one from scratch
-Monitor effect of chaos in real time with interleaved events and metrics from Prometheus Datasource
-- Workflow Management
-Rolling out automated changes using GitOps
-Allowing image addition from custom image server (both public and private)
-Measure and Analyse the Resilience Score of each workflow
-
 
 ## **Demo**
 
