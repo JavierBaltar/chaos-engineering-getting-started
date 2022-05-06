@@ -124,7 +124,6 @@ Litmus generates a chaos event for every chaos action that it takes. These chaos
 
 - Chaos Center
 Litmus Portal is a centralized web portal for creating, scheduling, and monitoring chaos workflows. A chaos workflow is a set of chaos experiments. Chaos workflows can be scheduled on remote Kubernetes clusters from the portal. SRE teams can share the portal while managing chaos through the portal. 
-Note: Litmus Portal is currently under development.
 
 
 #### Experiments Workflow
