@@ -110,19 +110,19 @@ Litmus comes with three main CRDs: ChaosEngine, ChaosExperiment, and ChaosResult
   - ChaosEngine connects an application or Kubernetes node to the specific ChaosExperiment
   - ChaosResult stores the results of the experiment. Operator exports it as Prometheus metrics.
 
-Chaos Hub
+- Chaos Hub
 Chaos experiments are the custom resources on Kubernetes. The YAML specifications for these custom resources are hosted at the public ChaosHub (https://hub.litmuschaos.io).
 
-Chaos Scheduler
+- Chaos Scheduler
 Chaos scheduler supports the granular scheduling of chaos experiments.
 
-Chaos metrics exporter
+- Chaos metrics exporter
 This is a Prometheus metrics exporter. Chaos metrics such as the number, type of experiments, and their results are exported into Prometheus. These metrics and target application metrics are combined to plot graphs that can show the effect of chaos to the application service or performance.
 
-Chaos events exporter
+- Chaos events exporter
 Litmus generates a chaos event for every chaos action that it takes. These chaos events are stored in etcd, and later exported to an event receiver for doing correlation or debugging of a service affected by chaos injection.
 
-Chaos Center
+- Chaos Center
 Litmus Portal is a centralized web portal for creating, scheduling, and monitoring chaos workflows. A chaos workflow is a set of chaos experiments. Chaos workflows can be scheduled on remote Kubernetes clusters from the portal. SRE teams can share the portal while managing chaos through the portal. 
 Note: Litmus Portal is currently under development.
 
