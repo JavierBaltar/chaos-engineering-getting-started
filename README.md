@@ -77,6 +77,8 @@ Chaos Engineering practice implies the following challenges and potential pitfal
 - Lack of monitoring and observability. Without comprehensive observability, it is difficult to understand the starting system state and the business impact of injected failures. Lack of visibility makes challenging for teams to determine the root cause of an issue which complicates fixing and remediation.
 
 ## **Tools**
+Chaos engineering tools help to automate the process of experimenting with failures and assessing the effect on applications and systems. 
+The following table lists some popular chaos engineering tools:
 
 | Tool | Open Source | Language | Platforms | Notes | 
 | ----------- | ----------- | ----------- | ----------- | ----------- |
@@ -85,8 +87,6 @@ Chaos Engineering practice implies the following challenges and potential pitfal
 | [Litmus Chaos](https://litmuschaos.io) | :heavy_check_mark: | TypeScript | | |
 | [Gremlin](https://www.gremlin.com) | :x: | | | |
 | [Chaos Blade](https://chaosblade.io) | :heavy_check_mark: | Go | Docker, Kubernetes, bare-metal, cloud providers | 
-
-
 
 
 ## **Litmus Chaos**
