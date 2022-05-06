@@ -104,12 +104,10 @@ Litmus is a Chaos Engineering Kubernetes native tool which provides for exhausti
 - Chaos Operator
 This operator is built using the Operator SDK framework and manages the lifecycle of a chaos experiment.
 
-Chaos Custom Resource Definitions
+- Chaos Custom Resource Definitions
 Litmus comes with three main CRDs: ChaosEngine, ChaosExperiment, and ChaosResult. 
-- ChaosExperiment defines the experiment itself, required actions, and their schedule
-
+- ChaosExperiment defines the experiment itself, actions, and their schedule. 
 - ChaosEngine connects an application or Kubernetes node to the specific ChaosExperiment
-
 - ChaosResult stores the results of the experiment. Operator exports it as Prometheus metrics.
 
 Chaos Hub
