@@ -85,7 +85,7 @@ The following table lists some popular chaos engineering tools:
 | [Chaos Mesh](https://chaos-mesh.org) | :heavy_check_mark: | Go | Kubernetes | |
 | [Chaos Toolkit](https://chaostoolkit.org) | :heavy_check_mark: | Python | | |
 | [Litmus Chaos](https://litmuschaos.io) | :heavy_check_mark: | TypeScript | | |
-| [Gremlin](https://www.gremlin.com) | :x: | | | |
+| [Gremlin](https://www.gremlin.com) | :x: | | | Another Gremlin perk is that the platform can autodetect infrastructure components and make experiment recommendations to identify common failure modes. The tool can also cut off experiments automatically when systems become unstable.|
 | [Chaos Blade](https://chaosblade.io) | :heavy_check_mark: | Go | Docker, Kubernetes, bare-metal, cloud providers | 
 
 
