@@ -90,14 +90,13 @@ The following table lists some popular chaos engineering tools:
 
 
 ## **Litmus Chaos**
-Litmus is a Chaos Engineering Kubernetes native tool which provides for exhaustive experiments support for testing containers, pods, and nodes. It has good documentation for each of its experiment and also provides a GitHub repository of experiments, open for public contribution.
+Litmus is a Chaos Engineering Kubernetes native tool which provides for exhaustive experiments support for testing Kubernetes. Its main advantages are:
 
-Its main advantages are:
-- Components declared as Kubernetes Custom Resource Definitions (CDRs)
-- Plenty of out of the box experiments
-- Experiments SDK available in Go, Ansible and Python. 
-- Chaos Portal GUI 
-- Integration with CICD tools
+- Components declared as Kubernetes Custom Resource Definitions (CDRs).  
+- Numerous out of the box experiments. 
+- Experiments SDK available in Go, Ansible and Python for developing customized tests. 
+- Chaos Portal graphical user interface with monitoring capabilities.  
+- Integration with CICD tools such as GitHub Actions. 
 - Experiment metrics can be imported to Prometheus. 
 
 ### **Architecture**
