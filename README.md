@@ -20,7 +20,7 @@ Chaos Engineering for Kubernetes introduction
    - [**Experiments**](#experiments)
      - [**Sock Shop Workflow Template**](#sock-shop-workflow-template)
      - [**Container Kill**](#container-kill)
- - [**References**](#referencess)
+ - [**References**](#references)
  - [**Author**](#author)
 
 ## **Introduction**
