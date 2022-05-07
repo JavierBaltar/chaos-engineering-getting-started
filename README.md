@@ -108,7 +108,7 @@ It is a centralized portal which provides a single pane of glass to configure, o
   - Visualize workflow run statistics and aggregated schedules
 
 - Chaos Hub
-Chaos experiments are the custom resources on Kubernetes. The YAML specifications for these custom resources are hosted at the public ChaosHub (https://hub.litmuschaos.io).
+Chaos experiments are the custom resources on Kubernetes. The YAML specifications for these custom resources are hosted at the public [Chaos Hub](https://hub.litmuschaos.io).
 
 - Chaos Operator
 This operator is built using the Operator SDK framework and manages the lifecycle of a chaos experiment.
