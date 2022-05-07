@@ -412,6 +412,8 @@ Finally, click on Finish to run the workflow.
 
 ![10%](docs/images/workflow-running.png)
 
+The workflow has deployed the sock shop application in the corresponding namespace:
+
 ```bash
 kubectl get pods -n sock-shop
 NAME                               READY   STATUS    RESTARTS   AGE
