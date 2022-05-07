@@ -23,7 +23,7 @@
  - [**Author**](#author)
 
 ## **Introduction**
-This is a tutorial on how to get started with Chaos Engineering for Kubernetes. We will first discuss on how to bring understanding to a system that is fundamentally not understandable, followed by running a brief demo on Litmus Chaos tool.
+This is a tutorial on how to get started with Chaos Engineering for Kubernetes. We will first discuss on how to bring understanding to a system that is fundamentally not understandable by implementing Chaos Engineering practices, followed by running a brief demo on Litmus Chaos tool.
 
 ## **Chaos Engineering**
 The history of Chaos Engineering begins with Netflix migration from datacenter to AWS cloud public provider in 2010. Netflix engineers decided to develop a suite called Chaos Monkey to test various failure conditions and ensure proper customer experience.
