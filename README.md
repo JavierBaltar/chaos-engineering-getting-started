@@ -339,18 +339,25 @@ kubectl create namespace monitoring
 ```
 
 Create the operator to instantiate all CRDs
+```bash
 kubectl -n monitoring apply -f utils/prometheus/prometheus-operator/
+```
 
 Deploy monitoring components
+```bash
 kubectl -n monitoring apply -f utils/metrics-exporters-with-service-monitors/node-exporter/
 kubectl -n monitoring apply -f utils/metrics-exporters-with-service-monitors/kube-state-metrics/
-
+```
 
 Deploy prometheus instance and all the service monitors for targets
+```bash
 kubectl -n monitoring apply -f utils/prometheus/prometheus-configuration/
+```
 
 Deploy Grafana
+```bash
 kubectl -n monitoring apply -f utils/grafana/
+```
 
 Go back to Chaos Center and browse the Analytics tab.
 
