@@ -80,13 +80,13 @@ Chaos Engineering practice implies the following challenges and potential pitfal
 Chaos engineering tools help to automate the process of experimenting with failures and assessing the effect on applications and systems. 
 The following table lists some popular chaos engineering tools:
 
-| Tool | Open Source | Language | Works with | Notes | 
-| ----------- | ----------- | ----------- | ----------- | ----------- |
-| [Chaos Mesh](https://chaos-mesh.org) | :heavy_check_mark: | Go | Kubernetes, bare metal | |
-| [Chaos Toolkit](https://chaostoolkit.org) | :heavy_check_mark: | Python | Kubernetes, bare metal, Cloud | |
-| [Litmus Chaos](https://litmuschaos.io) | :heavy_check_mark: | TypeScript | Kubernetes, Kafka, Cloud | |
-| [Gremlin](https://www.gremlin.com) | :x: | | Containers, Kubernetes, bare metal, Cloud |  |
-| [Chaos Blade](https://chaosblade.io) | :heavy_check_mark: | Go | Containers, Kubernetes, bare metal, Cloud | |
+| Tool | Open Source | Language | Works with | 
+| ----------- | ----------- | ----------- | ----------- | 
+| [Chaos Mesh](https://chaos-mesh.org) | :heavy_check_mark: | Go | Kubernetes, bare metal | 
+| [Chaos Toolkit](https://chaostoolkit.org) | :heavy_check_mark: | Python | Kubernetes, bare metal, Cloud | 
+| [Litmus Chaos](https://litmuschaos.io) | :heavy_check_mark: | TypeScript | Kubernetes, Kafka, Cloud | 
+| [Gremlin](https://www.gremlin.com) | :x: | Python + others | Containers, Kubernetes, bare metal, Cloud |  
+| [Chaos Blade](https://chaosblade.io) | :heavy_check_mark: | Go | Containers, Kubernetes, bare metal, Cloud |
 
 
 ## **Litmus Chaos**
