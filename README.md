@@ -100,6 +100,7 @@ Litmus is a Chaos Engineering Kubernetes native tool which provides for exhausti
 ### **Litmus Architecture**
 ### **Litmus Components**
 - Chaos Center
+
 It is a centralized portal which provides a single pane of glass to configure, operate and monitor your experiments. The Center comes with the following features:
   - Workflow creation and management from Chaos Hub or pre-defined yaml files. 
   - User management control. It supports creation of users and teams with Role Based Access Control.
@@ -107,24 +108,30 @@ It is a centralized portal which provides a single pane of glass to configure, o
   - Visualize workflow run statistics and aggregated schedules
 
 - Chaos Hub
+
 Chaos experiments are the custom resources on Kubernetes. The YAML specifications for these custom resources are hosted at the public [Chaos Hub](https://hub.litmuschaos.io).
 
 - Chaos Operator
+
 This operator is built using the Operator SDK framework and manages the lifecycle of a chaos experiment.
 
 - Chaos Custom Resource Definitions
+
 Litmus comes with three main CRDs: ChaosEngine, ChaosExperiment, and ChaosResult. 
   - ChaosExperiment defines the experiment itself, actions, and their schedule. 
   - ChaosEngine connects an application or Kubernetes node to the specific ChaosExperiment
   - ChaosResult stores the results of the experiment. Operator exports it as Prometheus metrics.
 
 - Chaos Scheduler
+
 It supports the granular scheduling of chaos experiments.
 
 - Chaos Metrics Exporter
+
 It is a Prometheus metrics exporter. Chaos metrics such as the number, type of experiments, and their results are exported into Prometheus. These metrics and target application metrics are combined to plot graphs that can show the effect of chaos to the application service or performance.
 
 - Chaos Events Exporter
+
 Litmus generates a chaos event for every chaos action that it takes. These chaos events are stored in etcd, and later exported to an event receiver for doing correlation or debugging of a service affected by chaos injection.
 
 ### **Experiment Workflow**
@@ -132,9 +139,11 @@ The diagram below depicts the Litmus experiments workflow process:
 
 Once a chaosengine object is created with active engineState attribute, Litmus Operator creates the chaos-runner pod in the target Kubernetes namespace. This runner checks experiment details and orchestrates the workflow. 
 
-Target identification is something that makes Litmus different. To zero in on the target, the user has to insert a specific annotation on the deployment (more workloads are supported here: DaemonSet, StatefulSet and DeploymentConfig). Then, the user needs to modify the labels and fields in the chaosengine object (an example is shown below) so that Litmus can then locate all (or some) of the pods of the target deployment. 
+The user has to insert a specific annotation on the deployment (i.e. DaemonSet, StatefulSet and Deployment). Then, the user needs to modify the labels and fields in the chaosengine object so that Litmus can then locate all of the pods of the target deployment. 
 
-Once the Operator verifies that all the above prerequisites are met (correct labelling, annotation, Chaosexperiment object, permissions), it will create a pod of the experiment runner, which is responsible for the execution of the experiment. This workflow allows for limiting the blast radius of an experiment, as well as for concurrent experiment executions.
+Secondly, the operator verifies that all the above prerequisites are met (labelling, annotation, Chaos experiment object, permissions). It will create a pod of the experiment runner, which is responsible for the execution of the experiment.
+
+Once the experiment is completed, the Chaos result resource is updated with the output of the test according to the probes included. 
 
 ## **Demo**
 The goal of this demo is to install Litmus Chaos on a Kubernetes cluster (AWS EKS based) and execute a couple of experiments in order to gain a wider vision on Chaos Engineering for Kubernetes features. 
