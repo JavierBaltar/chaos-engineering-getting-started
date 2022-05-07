@@ -8,7 +8,6 @@ Chaos Engineering for Kubernetes introduction
    - [**Use Cases**](#use-cases)
    - [**Benefits**](#benefitss)
    - [**Challenges and Pitfalls**](#challenges-and-pitfalls)
-   - [**First Steps**](#first-steps)
    - [**Tools**](#tools)
  - [**Litmus Chaos**](#litmus-chaos)
    - [**Architecture**](#litmus-architecture) 
