@@ -398,7 +398,6 @@ The workflow can be modified by editing the experiment manifest and adding or ar
 
 ![10%](docs/images/tune-workflow.png)
 
-
 The weights of the experiments can be tuned in order to set the importance of each experiment according to your requirements to get a meaningful reliability score. 
 
 ![10%](docs/images/adjust-weights.png)
@@ -456,12 +455,14 @@ Click on View Logs & Results to check out the logs and chaos results for the dif
 
 ### Container Kill
 Now, let´s pick the container kill experiment to go through the details of running an experiment.
-First of all, I will deploy a sample application
+First of all, I will deploy a nginx based sample application.
 
 ```bash
 kubectl apply -f src/nginx/nginx-deployment.yaml -n testing
 kubectl apply -f src/nginx/nginx-hpa.yaml -n testing
 ```
+
+Couple of pods are running. 
 ```bash
 kubectl get pods -n testing
 NAME                          READY   STATUS    RESTARTS   AGE
@@ -469,6 +470,7 @@ app-sample-55b8878cfb-75l2p   0/1     Running   0          14s
 app-sample-55b8878cfb-wbcmc   1/1     Running   0          36s
 ```
 
+Creating a load balancer to expose the application endpoint.
 ```bash
 kubectl expose deployment app-sample --type=LoadBalancer --port=80  -n testing
 service/app-sample exposed
@@ -515,7 +517,6 @@ pod-network-loss          56s
 pod-network-partition     56s
 
 ```
-
 In order to enable the experiment execution against the deployment, I need to add the annotation litmuschaos.io/chaos="true". 
 
 ```bash
@@ -536,7 +537,7 @@ Selector:               app.kubernetes.io/name=app-sample
 
 ```
 
-Apply the SA:
+Creating experiment service account, role and rolebinding:
 
 ```bash
 
