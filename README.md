@@ -461,7 +461,7 @@ Click on View Logs & Results to check out the logs and chaos results for the dif
 ![10%](docs/images/chaos-results.png)
 
 ### Container Kill
-Now, let´s pick the container kill experiment to go through the details of running an experiment.
+Now, let´s pick the container kill experiment to go through the details of running an experiment. Further experiment details can be found at [Litmus Container kill](https://litmuschaos.github.io/litmus/experiments/categories/pods/container-kill/).
 First of all, I will deploy a nginx based sample application.
 
 ```bash
