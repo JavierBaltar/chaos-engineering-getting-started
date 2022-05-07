@@ -12,7 +12,7 @@ Chaos Engineering for Kubernetes introduction
  - [**Litmus Chaos**](#litmus-chaos)
    - [**Litmus Architecture**](#litmus-architecture) 
    - [**Litmus Components**](#litmus-components)
-   - [**Workflows**](#workflows)
+   - [**Experiment Workflow**](#experiment-workflow)
    - [**Chaos Center**](#chaos-center)
  - [**Demo**](#demo)
    - [**Source Code**](#source-code)
@@ -128,7 +128,7 @@ It is a Prometheus metrics exporter. Chaos metrics such as the number, type of e
 - Chaos Events Exporter
 Litmus generates a chaos event for every chaos action that it takes. These chaos events are stored in etcd, and later exported to an event receiver for doing correlation or debugging of a service affected by chaos injection.
 
-#### Experiments Workflow
+### **Experiment Workflow**
 The diagram below depicts the Litmus experiments workflow process:
 
 Once a chaosengine object is created with active engineState attribute, Litmus Operator creates the chaos-runner pod in the target Kubernetes namespace. This runner checks experiment details and orchestrates the workflow. 
