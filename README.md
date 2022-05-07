@@ -369,8 +369,11 @@ Add the recently created Prometheus endpoint as data source:
 
 ![10%](docs/images/analytics-prometheus-data-source.png)
 
+Monitoring dashboards can be added for displaying metrics:
 
 ![10%](docs/images/analytics-dashboard.png)
+
+Similarly, metrics and indicators Grafana dashboards can be observed using Grafana dashboards:
 
 ![10%](docs/images/grafana-dashboard.png)
 
@@ -383,20 +386,26 @@ LitmusChaos comes with three pre-defined workflows, which deploy a bunch of micr
 Browse the dashboard and select Schedule a Workflow.
 
 ![10%](docs/images/litmus-workflows.png)
+
 In the Workflows dashboard, select the Self-Agent and then click on Next.
+
 ![10%](docs/images/select-agent.png)
 
 Select Create a Workflow from Pre-defined Templates and then select sock shop and then click on Next.
+
 ![10%](docs/images/pre-defined-workflow-template.png)
 
 The workflow can be modified by editing the experiment manifest and adding or arranging the experiments settings. 
+
 ![10%](docs/images/tune-workflow.png)
 
 
 The weights of the experiments can be tuned in order to set the importance of each experiment according to your requirements to get a meaningful reliability score. 
+
 ![10%](docs/images/adjust-weights.png)
 
 On the next tab, you can schedule the workflow if the experiment needs to run at specific intervals.
+
 ![10%](docs/images/chaos-schedule.png)
 
 Finally, click on Finish to run the workflow. 
