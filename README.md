@@ -549,15 +549,14 @@ rolebinding.rbac.authorization.k8s.io/container-kill-sa created
 
 ```
 
-Launch the experiment:
-```bash
+The Chaos Engine resource consists of general specifications, experiment variables and probe details.
+Litmus currently supports four types of Probes:
 
-kubectl apply -f chaos-engine-kill-container.yaml -n testing
-chaosengine.litmuschaos.io/app-sample-chaos created
+- httpProbe: To query health/downstream URIs.
+- cmdProbe: To execute any user-desired health-check function implemented as a shell command.
+- k8sProbe: To perform CRUD operations against native & custom Kubernetes resources.
+- promProbe: To execute promql queries and match prometheus metrics for specific criteria.
 
-```
-
-Experiment details:
 ```yaml
 apiVersion: litmuschaos.io/v1alpha1
 kind: ChaosEngine
@@ -610,6 +609,16 @@ spec:
               probePollingInterval: 1
 ```
 
+Launch the experiment:
+```bash
+
+kubectl apply -f chaos-engine-kill-container.yaml -n testing
+chaosengine.litmuschaos.io/app-sample-chaos created
+
+```
+
+Chaos runner is deployed.
+
 ```bash
 kubectl get pods -n testing
 NAME                             READY   STATUS    RESTARTS   AGE
@@ -617,7 +626,9 @@ app-sample-55b8878cfb-75l2p      1/1     Running   0          21m
 app-sample-55b8878cfb-wbcmc      1/1     Running   0          21m
 app-sample-chaos-runner          1/1     Running   0          18s
 container-kill-cdykvi--1-w6qhv   1/1     Running   0          13s
+```
 
+```bash
 
 
 kubectl get pods -n testing
@@ -627,10 +638,10 @@ app-sample-55b8878cfb-wbcmc      1/1     Running   0            21m
 app-sample-chaos-runner          1/1     Running   0            46s
 container-kill-cdykvi--1-w6qhv   1/1     Running   0            41s
 container-kill-helper-cxfvxr     1/1     Running   0            19s
-
 ```
 
-The result of the experiment
+The result of the experiment.
+
 ```bash
 kubectl describe chaosresult app-sample-chaos-container-kill -n testing
 
