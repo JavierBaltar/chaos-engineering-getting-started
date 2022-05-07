@@ -10,7 +10,7 @@ Chaos Engineering for Kubernetes introduction
    - [**Challenges and Pitfalls**](#challenges-and-pitfalls)
    - [**Tools**](#tools)
  - [**Litmus Chaos**](#litmus-chaos)
-   - [**Architecture**](#litmus-architecture) 
+   - [**Litmus Architecture**](#litmus-architecture) 
    - [**Components**](#litmus-components)
    - [**Workflows**](#workflows)
    - [**Chaos Center**](#chaos-center)
@@ -98,7 +98,7 @@ Litmus is a Chaos Engineering Kubernetes native tool which provides for exhausti
 - Integration with CICD tools such as GitHub Actions. 
 - Experiment metrics can be imported to Prometheus. 
 
-### **Architecture**
+### **Litmus Architecture**
 ### **Components**
 - Chaos Center
 It is a centralized portal which provides a single pane of glass to configure, operate and monitor your experiments. The Center comes with the following features:
