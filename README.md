@@ -363,6 +363,8 @@ Go back to Chaos Center and browse the Analytics tab.
 
 ![10%](docs/images/analytics.png)
 
+Add the recently created Prometheus endpoint as data source:
+
 ![10%](docs/images/analytics-data-source.png)
 
 ![10%](docs/images/analytics-prometheus-data-source.png)
