@@ -41,15 +41,15 @@ Chaos Engineering methodologies imply the deliberate introduction of faulty cond
 ![10%](docs/images/chaos-eng-principles.png)
 
 ### **First Steps**
-As with any scientific experiment, getting started with chaos engineering requires communication, preparation, organization, and the ability to monitor the output and results.
+As with any scientific experiment, getting started with chaos engineering is a matter of culture. It requires communication, preparation, organization, and the ability to monitor the output and results.
 
 First, you should understand the applications and architecture of the target environment in order to recognize the effects of the injected chaos. Being familiar with the baseline, creates a blueprint for monitoring during the testing and analyzing chaos output after.
 
-Establish a hypothesis and foresee what could go wrong. With a clear idea of the system’s starting state, ask what could go wrong. With a clear idea of the system’s starting state, ask what could go wrong. Understand service-level indicators and service-level objectives and use them as a basis for establishing an assumption for how the system should work under pressure.
+Establish a hypothesis and foresee what could go wrong. With a clear idea of the system starting state, ask what could go wrong. Understand service level indicators and service level objectives and use them as a basis for establishing an assumption for how the system should work under pressure.
 
-Introduce chaos one variable at a time. To keep control of the blast radius, introduce only a little chaos at a time, so you can appreciate the results. Be prepared to abort the experiment under certain conditions, so no harm comes to production software, and also have a roll-back plan if something goes wrong. During the test, try to disprove the hypothesis to discover areas to focus on to improve system resilience.
-Monitor and record the results. Monitor the experiment to record any nuances in application behavior. Analyze the results to see how the application responds and whether testing achieved the teams’ expectations. Use investigation tools to understand the precise root causes of slow-downs and failures.
+Introduce chaos one variable at a time. To keep control of the blast radius, introduce only a little chaos at a time, so you can appreciate the results. Be prepared to abort the experiment under certain conditions and also have a rollback plan if something goes wrong.
 
+Monitor and record the results. Analyze the results to see how the application responds and whether testing achieved the teams expectations. Use investigation tools to understand the precise root causes of failures.
 
 ### **Benefits**
 Embracing Chaos Engineering brings the following benefits:
@@ -87,6 +87,7 @@ The following table lists some popular chaos engineering tools:
 | [Gremlin](https://www.gremlin.com) | :x: | Python + others | Containers, Kubernetes, bare metal, Cloud |  
 | [Chaos Blade](https://chaosblade.io) | :heavy_check_mark: | Go | Containers, Kubernetes, bare metal, Cloud |
 
+Identify your prerequisites and select the tool that fits better your requirements.
 
 ## **Litmus Chaos**
 Litmus is a Chaos Engineering Kubernetes native tool which provides for exhaustive experiments support for testing Kubernetes. Its main advantages are:
@@ -138,9 +139,9 @@ Target identification is something that makes Litmus different. To zero in on th
 Once the Operator verifies that all the above prerequisites are met (correct labelling, annotation, Chaosexperiment object, permissions), it will create a pod of the experiment runner, which is responsible for the execution of the experiment. This workflow allows for limiting the blast radius of an experiment, as well as for concurrent experiment executions.
 
 ## **Demo**
+The goal of this demo is to install Litmus Chaos on a Kubernetes cluster (AWS EKS based) and execute a couple of experiments in order to gain a wider vision on Chaos Engineering for Kubernetes features. 
 
 ### **Source Code**
-
 Source code can be cloned from [github](https://github.com/JavierBaltar/chaos-engineering-getting-started).
 
 ```bash
