@@ -101,6 +101,16 @@ Litmus is a Chaos Engineering Kubernetes native tool which provides for exhausti
 
 ### **Architecture**
 ### **Components**
+- Chaos Center
+It is a centralized portal which provides a single pane of glass to configure, operate and monitor your experiments. The Center comes with the following features:
+  - Workflow creation and management from Chaos Hub or pre-defined yaml files. 
+  - User management control. It supports creation of users and teams with Role Based Access Control.
+  - Monitor effect of chaos in real time with interleaved events and metrics from Prometheus Datasource
+  - Visualize workflow run statistics and aggregated schedules
+
+- Chaos Hub
+Chaos experiments are the custom resources on Kubernetes. The YAML specifications for these custom resources are hosted at the public ChaosHub (https://hub.litmuschaos.io).
+
 - Chaos Operator
 This operator is built using the Operator SDK framework and manages the lifecycle of a chaos experiment.
 
@@ -110,34 +120,14 @@ Litmus comes with three main CRDs: ChaosEngine, ChaosExperiment, and ChaosResult
   - ChaosEngine connects an application or Kubernetes node to the specific ChaosExperiment
   - ChaosResult stores the results of the experiment. Operator exports it as Prometheus metrics.
 
-- Chaos Hub
-Chaos experiments are the custom resources on Kubernetes. The YAML specifications for these custom resources are hosted at the public ChaosHub (https://hub.litmuschaos.io).
-
 - Chaos Scheduler
-Chaos scheduler supports the granular scheduling of chaos experiments.
+It supports the granular scheduling of chaos experiments.
 
-- Chaos metrics exporter
-This is a Prometheus metrics exporter. Chaos metrics such as the number, type of experiments, and their results are exported into Prometheus. These metrics and target application metrics are combined to plot graphs that can show the effect of chaos to the application service or performance.
+- Chaos Metrics Exporter
+It is a Prometheus metrics exporter. Chaos metrics such as the number, type of experiments, and their results are exported into Prometheus. These metrics and target application metrics are combined to plot graphs that can show the effect of chaos to the application service or performance.
 
-- Chaos events exporter
+- Chaos Events Exporter
 Litmus generates a chaos event for every chaos action that it takes. These chaos events are stored in etcd, and later exported to an event receiver for doing correlation or debugging of a service affected by chaos injection.
-
-- Chaos Center
-It is a centralized portal which provides a single pane of glass to configure, operate and monitor your experiments. The Center comes with the following features:
-  - Workflow Creation from Chaos Hub or pre-defined yaml files. 
-  - User management control. It supports creation of users and teams with Role Based Access Control.
-  - Monitoring & Observability
-Connect a Data Source (from any Agent) and monitor workflows
-Visualize workflow run statistics and aggregated schedules
-Compare two or more Workflows
-Upload shared/downloadable dashboards available in the community
-Edit queries, Tune dashboards to create a custom one from scratch
-Monitor effect of chaos in real time with interleaved events and metrics from Prometheus Datasource
-
- - Workflow Management
-Rolling out automated changes using GitOps
-Allowing image addition from custom image server (both public and private)
-Measure and Analyse the Resilience Score of each workflow
 
 #### Experiments Workflow
 The diagram below depicts the Litmus experiments workflow process:
