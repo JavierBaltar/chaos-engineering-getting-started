@@ -380,7 +380,6 @@ Similarly, metrics and indicators Grafana dashboards can be observed using Grafa
 ## Experiments
 
 ### Sock Shop Workflow Template
-
 LitmusChaos comes with three pre-defined workflows, which deploy a bunch of microservices to play with. We will be running a Sock Shop workflow, which installs a sock-shop application, generate loads, inject chaos on sock-shop, uninstall the application and revert the chaos. 
 
 Browse the dashboard and select Schedule a Workflow.
@@ -452,6 +451,7 @@ After few minutes, the workflow run execution is completed. The workflow details
 ![10%](docs/images/graph-view.png)
 
 Click on View Logs & Results to check out the logs and chaos results for the different experiments. 
+
 ![10%](docs/images/chaos-results.png)
 
 ### Container Kill
@@ -478,7 +478,6 @@ NAME         TYPE           CLUSTER-IP      EXTERNAL-IP                         
 app-sample   LoadBalancer   10.100.221.67   a587b6b418a0a475d9860ed3f85f4b4e-800872529.eu-west-1.elb.amazonaws.com   80:31203/TCP   9s
 
 ```
-
 
 Install the experiments on the target testing namespace:
 
