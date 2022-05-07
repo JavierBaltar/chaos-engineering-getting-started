@@ -39,7 +39,7 @@ Chaos Engineering should not be confused with testing. Unit testing validates th
 Chaos Engineering methodologies imply the deliberate introduction of faulty conditions into a system to understand how the system will react and what could be its side effects.
 
 ## **Principles**
-TBC.
+![10%](docs/images/chaos-eng-principles.png)
 
 ### **First Steps**
 As with any scientific experiment, getting started with chaos engineering requires communication, preparation, organization, and the ability to monitor the output and results.
