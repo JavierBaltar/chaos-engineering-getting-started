@@ -12,7 +12,6 @@
    - [**Litmus Architecture**](#litmus-architecture) 
    - [**Litmus Components**](#litmus-components)
    - [**Experiment Workflow**](#experiment-workflow)
-   - [**Chaos Center**](#chaos-center)
  - [**Demo**](#demo)
    - [**Source Code**](#source-code)
    - [**Environment Setup**](#environment-setup)
