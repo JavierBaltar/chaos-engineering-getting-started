@@ -102,12 +102,14 @@ Litmus is a Chaos Engineering Kubernetes native tool which provides for exhausti
 - Chaos Center
 
 It is a centralized portal which provides a single pane of glass to configure, operate and monitor your experiments. The Center comes with the following features:
-  - Workflow creation and management from Chaos Hub or pre-defined yaml files. 
-  - User management control. It supports creation of users and teams with Role Based Access Control.
-  - Monitor effect of chaos in real time with interleaved events and metrics from Prometheus Datasource
-  - Visualize workflow run statistics and aggregated schedules
+   - Workflow creation and management from Chaos Hub or pre-defined yaml files. 
+   - User management control. It supports creation of users and teams with Role Based Access Control.
+   - Monitor effect of chaos in real time with interleaved events and metrics from Prometheus Datasource
+   - Visualize workflow run statistics and aggregated schedules
 
 - Chaos Hub
+
+It allows you to orchestrate workflows from the Public ChaosHub or an alternate source repository for the experiments. 
 
 - Chaos experiments
 
