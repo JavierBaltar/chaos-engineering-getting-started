@@ -365,13 +365,18 @@ event-tracker-8567f867-6kqqs                1/1     Running   0          47s
 subscriber-67b8bfcc89-4w48j                 1/1     Running   0          47s
 workflow-controller-856d568f68-cv7kn        1/1     Running   0          49s
 ```
+Browse the Chaos Center home:
 
 ![10%](docs/images/chaos-center-home.png)
+
+Chaos Agents tab is listing the self-agent but you can connect multiple agents from different remote clusters. 
 
 ![10%](docs/images/chaos-agents.png)
 
 
 ## Enabling Monitoring
+At this step, let´s deploy Prometheus and Grafana for monitoring purposes.
+
 Create a monitoring namespace:
 ```bash
 kubectl create namespace monitoring
