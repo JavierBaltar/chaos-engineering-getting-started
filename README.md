@@ -98,6 +98,7 @@ Litmus is a Chaos Engineering Kubernetes native tool which provides for exhausti
 - Experiment metrics can be imported to Prometheus. 
 
 ### **Litmus Architecture**
+![10%](docs/images/litmus-architecture.png)
 ### **Litmus Components**
 - Chaos Center
 
