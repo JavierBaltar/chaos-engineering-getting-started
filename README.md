@@ -170,6 +170,8 @@ Litmus generates a chaos event for every chaos action that it takes. These chaos
 ### **Experiment Workflow**
 The diagram below depicts the Litmus experiments workflow process:
 
+![10%](docs/images/experiment-workflow.png)
+
 Once a chaosengine object is created with active engineState attribute, Litmus Operator creates the chaos-runner pod in the target Kubernetes namespace. This runner checks experiment details and orchestrates the workflow. 
 
 The user has to insert a specific annotation on the deployment (i.e. DaemonSet, StatefulSet and Deployment). Then, the user needs to modify the labels and fields in the chaosengine object so that Litmus can then locate all of the pods of the target deployment. 
