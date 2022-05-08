@@ -175,7 +175,14 @@ The user has to insert a specific annotation on the deployment (i.e. DaemonSet, 
 
 Secondly, the operator verifies that all the above prerequisites are met (labelling, annotation, Chaos experiment object, permissions). It will create a pod of the experiment runner, which is responsible for the execution of the experiment.
 
-Once the experiment is completed, the Chaos result resource is updated with the output of the test according to the probes included. 
+Once the experiment is completed, the Chaos result resource is updated with the output of the test according to the probes included.
+
+Litmus currently supports four types of Probes:
+
+- httpProbe: To query health/downstream URIs.
+- cmdProbe: To execute any user-desired health-check function implemented as a shell command.
+- k8sProbe: To perform CRUD operations against native & custom Kubernetes resources.
+- promProbe: To execute promql queries and match prometheus metrics for specific criteria.
 
 ## **Demo**
 The goal of this demo is to install Litmus Chaos on a Kubernetes cluster (AWS EKS based) and execute a couple of experiments in order to gain a wider vision on Chaos Engineering for Kubernetes features. 
