@@ -109,35 +109,37 @@ It is a centralized portal which provides a single pane of glass to configure, o
 
 - Chaos Hub
 
-- Chaos experiments 
-Here are some examples of the predefined experiments availabl for Kubernetes: 
+- Chaos experiments
+
+Here are some examples of the [predefined experiments](https://litmuschaos.github.io/litmus/experiments/categories/contents/) available for Kubernetes: 
   - Experiments for pods
     - Container kill
     - Disk fill
-    - Pod autoscaler (test the autoscaling policy)
-Pod cpu hog exec
-Pod cpu hog
-Pod delete
-Pod dns error
-Pod dns spoof
-Pod io stress
-Pod memory hog
-Pod network corruption
-Pod network duplication
-Pod network latency
-Pod network los
+    - Pod autoscaler
+    - Pod cpu hog exec
+    - Pod cpu hog
+    - Pod delete
+    - Pod DNS error
+    - Pod DNS spoof
+    - Pod IO stress
+    - Pod memory hog
+    - Pod network corruption
+    - Pod network duplication
+    - Pod network latency
+    - Pod network loss
+    - Pod network partition
 
-  - Experiments on nodes
+  - Nodes experiments:    
     - Docker service kill
-Kubelet service kill
-Node cpu hog
-Node drain
-Node io stress
-Node memory hog
-Node restart
-Node taint
+    - Kubelet service kill
+    - Node CPU hog
+    - Node drain
+    - Node IO stress
+    - Node memory hog
+    - Node restart
+    - Node taint
 
-are the custom resources on Kubernetes. The YAML specifications for these custom resources are hosted at the public [Chaos Hub](https://hub.litmuschaos.io).
+The YAML specifications for these custom resources are hosted at the public [Chaos Hub](https://hub.litmuschaos.io).
 
 - Chaos Operator
 
