@@ -198,16 +198,6 @@ git clone https://github.com/JavierBaltar/chaos-engineering-getting-started.git
 cd chaos-engineering-getting-started
 ```
 
-```bash
-tree
-.
-├── chaos-engine-kill-container.yaml
-├── infra
-├── kill-container-sa.yaml
-├── kill-container.yaml
-├── nginx-deployment.yaml
-└── nginx-hpa.yaml
-```
 
 ### **Environment Setup**
 The first step is installing Litmus Chaos. In this case, Litmus is deployed on an Amazon EKS cluster using the following tools: eksctl, helm and kubectl.
